@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, Platform,ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, Platform,ScrollView ,Dimensions} from 'react-native';
 import Header from './Header.js';
 import Footer from './Footer.js';
 import Advertisement from './Advertisement.js';
@@ -44,14 +44,14 @@ export default class Login extends Component
     <View style={{marginLeft:'0%',flex:1,justifyContent:'center',alignItems:'center'}}>
           <Text style={styles.signText}>SIGN IN </Text>
           <Text style={styles.paraText}>Enjoy with our services now  </Text><br></br>
-          <View style={{flexDirection:'row'}}>
+          <View style={{flexDirection:'row',alignItems:'center',justifyContent:'center'}}>
           <Text style={styles.mobileText}>Mobile  </Text>
             <TextInput style = {styles. codeinputs}
                underlineColorAndroid = "transparent"
                placeholderTextColor = "#8d1b3e"
                autoCapitalize = "none"
-              /><View style={{backgroundColor:'#fff',position:'absolute',top:'9%',left:'18%'}}>
-                 <Text style={{}}>  Code  </Text>
+              /><View style={{backgroundColor:'#fff',position:'absolute',top:'13%',left:'18%'}}>
+                 <Text style={{fontSize:width*.007}}>  Code  </Text>
 
               </View>
              
@@ -60,18 +60,18 @@ export default class Login extends Component
                placeholderTextColor = "#8d1b3e"
                autoCapitalize = "none"
                /><View style={{backgroundColor:'#fff',position:'absolute',top:'9%',left:'45%'}}>
-               <Text style={{}}>  Your Mobile Number  </Text>
+               <Text style={{fontSize:width*.007}}>  Your Mobile Number  </Text>
 
             </View>
           </View>
-          <View style={{flexDirection:'row'}}>
+          <View style={{flexDirection:'row',alignItems:'center',justifyContent:'center'}}>
           <Text style={styles.passText}>  Password  </Text>
           <View style = { styles.contai }>
         <View style = { styles.textBoxBtnHolder }>
           <br></br>
           <TextInput underlineColorAndroid = "transparent" secureTextEntry = { this.state.hidePassword } style = { styles.textBox }/>
           <View style={{backgroundColor:'#fff',position:'absolute',top:'8%',left:'15%'}}>
-               <Text style={{}}>  Password  </Text>
+               <Text style={{fontSize:width*.007,marginLeft:width*.001}}>  Password  </Text>
 
             </View>
            
@@ -83,7 +83,7 @@ export default class Login extends Component
          </View>
             </View>
             <View style={{flexDirection:'row',marginLeft:'5%',flex:1,justifyContent:'center',alignItems:'center'}}>
-            <Text>
+            <Text style={{fontSize:width*.007}}>
         Forgot your Password???</Text>
       </View>
       <View style={{flexDirection:'row',marginLeft:'5%',flex:1,justifyContent:'center',alignItems:'center'}}>
@@ -108,20 +108,27 @@ export default class Login extends Component
 
 
 
-     <View style={{marginLeft:'0%',flex:1,justifyContent:'center',alignItems:'center'}}>
-     <Text style={styles.signText}>SIGNUP</Text>
+     <View style={{marginLeft:'0%',flex:1,padding:width*.02}}>
+       <View style={{alignItems:'center',flex:1}}>
+       <Text style={styles.signText}>SIGNUP</Text>
      <Text style={styles.paraText}>Don't have an account?Sign Up</Text>
+       </View>
+     
      <br></br>
-     <View style={{flexDirection:'row'}}>
+     <View style={{flexDirection:'row',flex:1}}>
+      
        <Text style={styles.nameText}>Name  </Text>
+
+       
+       
      <TextInput style = {styles. nameinputs}
                underlineColorAndroid = "transparent"
                
                placeholderTextColor = "#8d1b3e"
                autoCapitalize = "none"
            />
-           <View style={{backgroundColor:'#fff',position:'absolute',top:'9%',left:'15%'}}>
-                 <Text style={{}}>  First Name  </Text>
+           <View style={{backgroundColor:'#fff',position:'absolute',top:'9%',left:'22%'}}>
+                 <Text style={{fontSize:width*.007}}>  First Name  </Text>
 
               </View>
             <TextInput style = {styles. name2inputs}
@@ -129,20 +136,20 @@ export default class Login extends Component
                placeholderTextColor = "#8d1b3e"
                autoCapitalize = "none"
            />
-           <View style={{backgroundColor:'#fff',position:'absolute',top:'9%',left:'60%'}}>
-                 <Text style={{}}>  Last Name  </Text>
+           <View style={{backgroundColor:'#fff',position:'absolute',top:'9%',left:'63%'}}>
+                 <Text style={{fontSize:width*.007}}>  Last Name  </Text>
 
               </View>
           </View>
-          <View style={{flexDirection:'row'}}>
+          <View style={{flexDirection:'row',flex:1}}>
           <Text style={styles.nameText}>Mobile  </Text>
-          <TextInput style = {styles. codeinputs}
+          <TextInput style = {styles. codeinputs1}
                underlineColorAndroid = "transparent"
                placeholderTextColor = "#8d1b3e"
                autoCapitalize = "none"
            />
-            <View style={{backgroundColor:'#fff',position:'absolute',top:'8%',left:'15%'}}>
-               <Text style={{}}>  Code  </Text>
+            <View style={{backgroundColor:'#fff',position:'absolute',top:'8%',left:'22%'}}>
+               <Text style={{fontSize:width*.007}}>  Code  </Text>
             </View>
             <TextInput style = {styles.inputs2}
                underlineColorAndroid = "transparent"
@@ -150,27 +157,28 @@ export default class Login extends Component
                autoCapitalize = "none"
                />
                 <View style={{backgroundColor:'#fff',position:'absolute',top:'8%',left:'42%'}}>
-               <Text style={{}}>  Your Mobile Number  </Text>
+               <Text style={{fontSize:width*.007}}>  Your Mobile Number  </Text>
             </View>
              
           </View>
-          <View style={{flexDirection:'row'}}>
+          <View style={{flexDirection:'row',flex:1}}>
           <Text style={styles.nameText}>Password  </Text>
           <TextInput underlineColorAndroid = "transparent" secureTextEntry = { this.state.hidePassword } style = { styles.pnameinputs }/>
-          <View style={{backgroundColor:'#fff',position:'absolute',top:'8%',left:'15%'}}>
-               <Text style={{}}>  Password  </Text>
+          <View style={{backgroundColor:'#fff',position:'absolute',top:'8%',left:'22%'}}>
+               <Text style={{fontSize:width*.007}}>  Password  </Text>
             </View>
           <TextInput underlineColorAndroid = "transparent" secureTextEntry = { this.state.hidePassword } style = { styles.pname2inputs }/>
           <View style={{backgroundColor:'#fff',position:'absolute',top:'8%',left:'60%'}}>
-               <Text style={{}}>  Confirm Password  </Text>
+               <Text style={{fontSize:width*.007}}>  Confirm Password  </Text>
             </View>
+           
           <TouchableOpacity activeOpacity = { 0.8 } style = { styles.visibilityBtn2 } onPress = { this.managePasswordVisibility }><br></br>
             <Image source = { ( this.state.hidePassword ) ? require('./assets/closedeye.png') : require('./assets/openeye.png') } style = { styles.btnImage } />
             
           </TouchableOpacity>
           </View>
           <br></br>
-          <View style={{flexDirection:'row'}}>
+          <View style={{flexDirection:'row',alignItems:'center',justifyContent:'center'}}>
           
             <TouchableOpacity
                style = {styles.registerButton}
@@ -191,18 +199,21 @@ export default class Login extends Component
   
       
       </View>
-      <br></br><br></br><br></br><br></br>
-      <View style = {styles.Vertical2}>
+     <View
+      style={{alignItems:'flex-end',justifyContent:'flex-end'}}>
+     <View style = {styles.Vertical2}>
            
            
-   </View>
-   <View style = {styles.Vertical3}>
-           
-    
- </View>
-      <View style = {styles.Vertical}>
-           
-             </View>
+           </View>
+           <View style = {styles.Vertical3}>
+                   
+            
+         </View>
+              <View style = {styles.Vertical}>
+                   
+                     </View>
+      </View>
+      
    </View>
    
     </View><br></br><br></br>
@@ -213,13 +224,15 @@ export default class Login extends Component
   );
 }
 }
+export const { width, height}= Dimensions.get('window'); 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    borderRadius: '25px',
-    borderWidth: '8px',
-    width:'80%',
+    borderRadius: width*.017,
+    borderWidth: width*.003,
+    width:width*.8,
+    height:width*.425,
     borderColor:'#8d1b3e',
     borderStyle:"medium",
     fontStyle:"italic",
@@ -235,8 +248,8 @@ const styles = StyleSheet.create({
     
   },
   imageiconMain:{
-    width: 290,
-    height: 100,
+    width: width*.2,
+    height: width*.07,
     justifyContent:"space-between",
     alignItems: 'center',
     justifyContent: 'center',
@@ -251,12 +264,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   connecticon2Main:{
-    width: 5,
-    height: 300,
+    width: width*.002,
+    height: width*.18,
     marginLeft:'0%',
     justifyContent:"space-between",
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop:width*.01
   },
   fixToText: {
     flexDirection: 'row',
@@ -278,7 +292,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between ',
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize:17,
+    fontSize:width*.01,
+    flex:1
  
     
     
@@ -286,10 +301,10 @@ const styles = StyleSheet.create({
   mobileText:{
     color :'#354e76',
     fontStyle:"Times new roman",
-   marginLeft:30,
+   marginLeft:width*.01,
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize:15,
+    fontSize:width*.008,
     marginTop:'4%',
     
     
@@ -297,9 +312,12 @@ const styles = StyleSheet.create({
   nameText:{
     color :'#354e76',
     fontStyle:"Times new roman",
-   marginLeft:0,
-  
-    fontSize:15,
+   marginLeft:width*.001,
+  alignSelf:'stretch',
+
+  alignItems: 'center',
+  justifyContent: 'center',
+   fontSize:width*.008,
     marginTop:'4%',
     
     
@@ -307,20 +325,17 @@ const styles = StyleSheet.create({
   passText:{
     color :'#354e76',
     fontStyle:"Times new roman",
-   
-
-    fontSize:15,
-    marginTop:'4%',
-    
-    
+    fontSize:width*.008,
+    marginLeft:width*.015
   },
   signText:{
     flexDirection:'column',
     alignItems:'center',
     fontStyle:'bold',
-    fontSize:30,
+    fontSize:width*.02,
     color :'#8d1b3e',
-    justifyContent:'center'
+    justifyContent:'center',
+    flex:1
     
   },
   lineVertical:{
@@ -335,11 +350,11 @@ const styles = StyleSheet.create({
     width:'100%',
     border:'center',
     borderColor:'#8d1b3e',
-    flex: 1,
+    
     backgroundColor: '#8d1b3e',
     // paddingLeft:1360,
     marginLeft:0,
-    borderWidth: '6px',
+    borderWidth:'6px',
     borderStyle:"medium",
     fontStyle:"italic",
 
@@ -350,7 +365,7 @@ const styles = StyleSheet.create({
     width:'100%', width:'100%',
     border:'center',
     borderColor:'#354e76',
-    flex: 1,
+
     backgroundColor: '#354e76',
     // paddingLeft:1366,
     marginLeft:0,
@@ -365,7 +380,7 @@ const styles = StyleSheet.create({
     width:'100%',
     border:'center',
     borderColor:'#fdba45',
-    flex: 1,
+   
     backgroundColor: '#fdba45',
     // paddingLeft:1364,
     marginLeft:0,
@@ -381,24 +396,24 @@ const styles = StyleSheet.create({
  },
  inputs: {
     margin: 15,
-    height: 40,
+    height: width*.022,
     borderColor: '#000',
     borderWidth: 1,
-    width:380,
-    // background: '#600',
+    width:width*.19,
+    background: '#600',
     padding: '20px', 
-    marginLeft:1,
-    height: '15px',
+    marginLeft:width*.001,
+   
     paddingLeft:10,
  
  },
  inputs2: {
   margin: 15,
-  height: 40,
+  height: width*.022,
   borderColor: '#000',
   borderWidth: 1,
-  width:360,
- 
+  width:width*.15,
+ flex:3,
   // background: '#600',
   padding: '20px', 
   marginLeft:1,
@@ -408,60 +423,67 @@ const styles = StyleSheet.create({
 },
  codeinputs: {
   margin: 15,
-  paddingLeft:10,
-  height: 40,
+  paddingLeft:width*.001,
+  height: width*.022,
+  width:width*.065,
   borderColor: '#000',
   borderWidth: 1,
   flex:1,
-  width:150,
-
   resizeMode:'center',
 
 },
-nameinputs: {
+codeinputs1: {
   margin: 15,
-  height: 40,
+  height: width*.022,
+  width:width*.065,
   borderColor: '#000',
   borderWidth: 1,
-
-  width:250,
-  paddingLeft:10,
+  flex:1,
+  resizeMode:'center',
+  marginLeft:width*.015
+},
+nameinputs: {
+  margin: 15,
+  height: width*.022,
+  borderColor: '#000',
+  borderWidth: 1,
+flex:2,
+  width:width*.1,
+  marginLeft:width*.02
 
 
 },
 name2inputs: {
   margin: 15,
-  height: 40,
+  height: width*.022,
   borderColor: '#000',
   borderWidth: 1,
   marginLeft:10,
-  width:250,
-  paddingLeft:10,
- 
+  width:width*.1,
+  
+ flex:2
 
 },
-
-
-
 pnameinputs: {
-  margin: 15,
-  height: 40,
+  margin: 13,
+  height: width*.022,
   borderColor: '#000',
   borderWidth: 1,
-
-  width:240,
-  paddingLeft:10,
+flex:2,
+  width:width*.1,
+//  marginLeft:width*.025
 
 
 },
 pname2inputs: {
   margin: 15,
-  height: 40,
+  height: width*.022,
   borderColor: '#000',
   borderWidth: 1,
-  marginLeft:10,
-  width:270,
+  
+  width:width*.2,
   paddingLeft:10,
+  flex:2
  
 
 },
@@ -499,25 +521,27 @@ passwordinputs:{
  submitButton: {
     backgroundColor: '#8d1b3e',
     padding: 10,
- 
-    width:100,
-    paddingLeft:25,
-    height: 40,
+ alignItems:'center',
+ justifyContent:'center',
+    width:width*.04,
+   
+    height:width*.02
  },
  registerButton: {
   backgroundColor: '#8d1b3e',
   padding: 10,
- 
-  width:150,
-  paddingLeft:25,
+  justifyContent:'center',
+  width:width*.04,
   
+  height:width*.02,
  alignItems:'center'
 },
  submitButtonText:{
-    color: 'white'
+    color: 'white',
+    fontSize:width*.007
  },
  buttonContainer: {
-
+    
    
  },
  contai:
@@ -525,34 +549,40 @@ passwordinputs:{
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    // marginLeft:width*.03,
     paddingHorizontal: 10,
     paddingTop: (Platform.OS === 'ios') ? 20 : 0
   },
 
   textBoxBtnHolder:
   {
-    position: 'relative',
-    alignSelf: 'stretch',
-    justifyContent: 'center'
+  
+    alignItems:'center',
+    justifyContent: 'center',
+    flexDirection:'row'
   },
 
   textBox:
   {
-    fontSize: 18,
-    alignSelf: 'stretch',
-    height: 45,
-    width:550,
-    paddingLeft: 8,
-    borderWidth: 1,
-    paddingVertical: 0,
-    borderColor: '#000',
-
+  //   height: width*.022,
+  //  width:width*.2,
+  //   paddingLeft: width*.3,
+  //   borderWidth: 1,
+  //   paddingVertical: 0,
+  //   borderColor: '#000',
+  margin: 15,
+  height: width*.022,
+  borderColor: '#000',
+  borderWidth: 1,
+  // marginLeft:10,
+  width:width*.26,
+  // paddingLeft:10,
   },
 
   visibilityBtn:
   {
-    position: 'absolute',
-    left: 550,
+    
+    // left: width*.3,
     height: 40,
     width: 35,
     marginTop:10
@@ -560,19 +590,22 @@ passwordinputs:{
   },
   visibilityBtn2:
   {
-    position: 'absolute',
-    left: 620,
+    
+    // left: 620,
     height: 40,
     width: 35,
     padding: 5,
+    
     marginLeft:22
   },
 
   btnImage:
   {
     resizeMode: 'contain',
-    height: '100%',
-    width: '120%'
+    height: width*.02,
+    width: width*.02,
+    // top:'10%',
+    // left:width*.007
   }
   
 });

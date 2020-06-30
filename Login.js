@@ -385,7 +385,7 @@ const styles = StyleSheet.create({
     borderColor: '#000',
     borderWidth: 1,
     width:380,
-    background: '#600',
+    // background: '#600',
     padding: '20px', 
     marginLeft:1,
     height: '15px',
@@ -399,7 +399,7 @@ const styles = StyleSheet.create({
   borderWidth: 1,
   width:360,
  
-  background: '#600',
+  // background: '#600',
   padding: '20px', 
   marginLeft:1,
   paddingLeft:10,

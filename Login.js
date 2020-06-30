@@ -400,7 +400,7 @@ const styles = StyleSheet.create({
     borderColor: '#000',
     borderWidth: 1,
     width:width*.19,
-    background: '#600',
+  
     padding: '20px', 
     marginLeft:width*.001,
    

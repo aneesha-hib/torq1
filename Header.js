@@ -133,8 +133,8 @@ const styles = StyleSheet.create({
   },
   imageiconMain:{
     
-    height:width*.072,
-    width:width*.006,
+    height:width*.06,
+    width:width*.004,
     flex:1,
     resizeMode:'center',
     marginLeft:width*.01,

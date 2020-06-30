@@ -230,9 +230,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     borderRadius: width*.017,
-    borderWidth: width*.003,
+    borderWidth: width*.004,
     width:width*.8,
-    height:width*.425,
+    height:width*.428,
     borderColor:'#8d1b3e',
     borderStyle:"medium",
     fontStyle:"italic",
@@ -354,9 +354,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#8d1b3e',
     // paddingLeft:1360,
     marginLeft:0,
-    borderWidth:'6px',
+    borderWidth:'6.2px',
     borderStyle:"medium",
     fontStyle:"italic",
+    borderBottomLeftRadius:'3px'
 
   },
   Vertical2:{
@@ -400,7 +401,7 @@ const styles = StyleSheet.create({
     borderColor: '#000',
     borderWidth: 1,
     width:width*.19,
-  
+    background: '#600',
     padding: '20px', 
     marginLeft:width*.001,
    

@@ -1,45 +1,45 @@
 import React from 'react';
-import { StyleSheet, Text, View,Image,Dimensions } from 'react-native';
+import { StyleSheet, Text, View,Image,Dimensions,TouchableOpacity } from 'react-native';
 import {widthPercentageToDP, heightPercentageToDP} from 'react-native-responsive-screen';
-export default function Mainpage() {
+export default function Mainpage({navigation}) {
   return (
     <View style={styles.container1}>
    {/*  <Text style={styles.subHeading}>Vehicles</Text> */}  
    
           <View style={styles.container}>
-              <View style={styles.vehiclecontainer}>
-                     <View style={styles.vehiclecontainerItem}>
+              <View style={styles.vehiclecontainer}  >
+                     <TouchableOpacity style={styles.vehiclecontainerItem} onPress={() => navigation.navigate( 'postAdd' )}>
                           <Image style={styles.imageIcon} source={require('./assets/Car.png')} 
-                          onPress={() => this.props.navigation.navigate( 'login' )}
+                         
           />
                           <Text style={styles.vehicletext} >Car</Text>
-                     </View>
-                      <View style={styles.vehiclecontainerItem}>
+                     </TouchableOpacity>
+                     <TouchableOpacity style={styles.vehiclecontainerItem} onPress={() => navigation.navigate( 'postAdd' )}>
                           <Image style={styles.imageIcon} source={require('./assets/SUV.png')}/>
                           <Text style={styles.vehicletext}>SUV</Text>
 
-                      </View>
-                      <View style={styles.vehiclecontainerItem}>
+                      </TouchableOpacity>
+                      <TouchableOpacity style={styles.vehiclecontainerItem} onPress={() => navigation.navigate( 'postAdd' )}>
                           <Image style={styles.imageIcon} source={require('./assets/Pickup.png')}/>
                           <Text style={styles.vehicletext}>Pick Up</Text>
 
-                      </View>
+                      </TouchableOpacity>
                     
-                      <View style={styles.vehiclecontainerItem}>
+                      <TouchableOpacity style={styles.vehiclecontainerItem} onPress={() => navigation.navigate( 'postAdd' )}>
                           <Image style={styles.imageIcon} source={require('./assets/Bus.png')}/>
                          <Text style={styles.vehicletext}>Bus</Text>
 
-                       </View>
-                       <View style={styles.vehiclecontainerItem}>
+                       </TouchableOpacity>
+                       <TouchableOpacity style={styles.vehiclecontainerItem} onPress={() => navigation.navigate( 'postAdd' )}>
                        <Image style={styles.imageIcon} source={require('./assets/Van.png')}/>
                        <Text style={styles.vehicletext}>Van</Text>
 
-                       </View>
-                       <View style={styles.vehiclecontainerItem}>
+                       </TouchableOpacity>
+                       <TouchableOpacity style={styles.vehiclecontainerItem} onPress={() => navigation.navigate( 'postAdd' )}>
                        <Image style={styles.imageIcon} source={require('./assets/Heavy-Equipment.png')}/>
                        <Text style={styles.vehicletext}>Heavy Equipment</Text>
 
-                       </View>
+                       </TouchableOpacity>
                     
               </View>
              
@@ -48,42 +48,42 @@ export default function Mainpage() {
 
 
               <View style={styles.vehiclecontainer}>
-                <View style={styles.vehiclecontainerItem}>
+              <TouchableOpacity style={styles.vehiclecontainerItem} onPress={() => navigation.navigate( 'postAdd' )}>
                 <Image style={styles.imageIcon} source={require('./assets/Bike.png')}  />
                 <Text style={styles.vehicletext}>Bike</Text>
 
 
-                </View>
-                <View style={styles.vehiclecontainerItem}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.vehiclecontainerItem} onPress={() => navigation.navigate( 'postAdd' )}>
                 <Image style={styles.imageIcon} source={require('./assets/Bicycle.png')}/>
                 <Text style={styles.vehicletext}>Bicycle</Text>
 
 
-                </View>
-                <View style={styles.vehiclecontainerItem}>
-                <Image style={styles.imageIcon} source={require('./assets/Classic.png')}/>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.vehiclecontainerItem} onPress={() => navigation.navigate( 'postAdd' )}>               
+                 <Image style={styles.imageIcon} source={require('./assets/Classic.png')}/>
                 <Text style={styles.vehicletext}>Classic</Text>
 
 
-                </View>
-                <View style={styles.vehiclecontainerItem}>
-                <Image style={styles.imageIcon} source={require('./assets/Truck.png')}/>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.vehiclecontainerItem} onPress={() => navigation.navigate( 'postAdd' )}>               
+                 <Image style={styles.imageIcon} source={require('./assets/Truck.png')}/>
                 <Text style={styles.vehicletext}>Truck</Text>
 
 
-                </View> 
-                <View style={styles.vehiclecontainerItem}>
+                </TouchableOpacity> 
+                <TouchableOpacity style={styles.vehiclecontainerItem} onPress={() => navigation.navigate( 'postAdd' )}>                
                 <Image style={styles.imageIcon} source={require('./assets/Boat.png')}/>
                 <Text style={styles.vehicletext}>Boat</Text>
 
 
-                </View>  
-                <View style={styles.vehiclecontainerItem}>
+                </TouchableOpacity>  
+                <TouchableOpacity style={styles.vehiclecontainerItem} onPress={() => navigation.navigate( 'postAdd' )}>                
                 <Image style={styles.imageIcon} source={require('./assets/More.png')}/>
                 <Text style={styles.vehicletext}>More</Text>
 
 
-                </View>      
+                </TouchableOpacity>      
               </View>
               
 
@@ -96,63 +96,63 @@ export default function Mainpage() {
           <View style={styles.container}>
 
           <View style={styles.vehiclecontainer}>
-            <View style={styles.vehiclecontainerItem}>
+          <TouchableOpacity style={styles.vehiclecontainerItem} onPress={() => navigation.navigate( 'postAdd' )}>
             <Image style={styles.imageIcon} source={require('./assets/Wash.png')}  />
             <Text style={styles.vehicletext}>Car Wash</Text>
-            </View>
-            <View style={styles.vehiclecontainerItem}>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.vehiclecontainerItem} onPress={() => navigation.navigate( 'postAdd' )}>
             <Image style={styles.imageIcon} source={require('./assets/Rental.png')}/>
             <Text style={styles.vehicletext}>Rental</Text>
-            </View>
-            <View style={styles.vehiclecontainerItem}>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.vehiclecontainerItem} onPress={() => navigation.navigate( 'postAdd' )}>
             <Image style={styles.imageIcon} source={require('./assets/Taxi.png')}/>
             <Text style={styles.vehicletext}>Taxi</Text>
-            </View>
-            <View style={styles.vehiclecontainerItem}>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.vehiclecontainerItem} onPress={() => navigation.navigate( 'postAdd' )}>
             <Image style={styles.imageIcon} source={require('./assets/Garuage.png')}/>
             <Text style={styles.vehicletext}>Garage</Text>
-            </View>
-            <View style={styles.vehiclecontainerItem}>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.vehiclecontainerItem} onPress={() => navigation.navigate( 'postAdd' )}>
             <Image style={styles.imageIcon} source={require('./assets/Insurance.png')}/>
             <Text style={styles.vehicletext}>Insurance</Text>
-            </View>
-            <View style={styles.vehiclecontainerItem}>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.vehiclecontainerItem} onPress={() => navigation.navigate( 'postAdd' )}>
             <Image style={styles.imageIcon} source={require('./assets/Fahes.png')}/>
             <Text style={styles.vehicletext}>FAHES</Text>
-            </View>      
+            </TouchableOpacity>      
             </View>
              
               <View style={styles.vehiclecontainer}>
-                <View style={styles.vehiclecontainerItem}>
+              <TouchableOpacity style={styles.vehiclecontainerItem} onPress={() => navigation.navigate( 'postAdd' )}>
                 <Image style={styles.imageIcon} source={require('./assets/Tyre.png')}  />
                 <Text style={styles.vehicletext}>Tyre Shop</Text>
 
-                </View>
-                <View style={styles.vehiclecontainerItem}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.vehiclecontainerItem} onPress={() => navigation.navigate( 'postAdd' )}>
                 <Image style={styles.imageIcon} source={require('./assets/CarShowroom.png')}/>
                 <Text style={styles.vehicletext}>Car Showroom</Text>
 
-                </View>
-                <View style={styles.vehiclecontainerItem}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.vehiclecontainerItem} onPress={() => navigation.navigate( 'postAdd' )}>
                 <Image style={styles.imageIcon} source={require('./assets/Checking-Centre.png')}/>
                 <Text style={styles.vehicletext}>Checking Centre</Text>
 
-                </View>
-                <View style={styles.vehiclecontainerItem}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.vehiclecontainerItem} onPress={() => navigation.navigate( 'postAdd' )}>
                 <Image style={styles.imageIcon} source={require('./assets/Gas.png')}/>
                 <Text style={styles.vehicletext}>Gas</Text>
 
-                </View>
-                <View style={styles.vehiclecontainerItem}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.vehiclecontainerItem} onPress={() => navigation.navigate( 'postAdd' )}>
                 <Image style={styles.imageIcon} source={require('./assets/Towing.png')}/>
                 <Text style={styles.vehicletext}>Towing</Text>
 
-                </View>
-                <View style={styles.vehiclecontainerItem}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.vehiclecontainerItem} onPress={() => navigation.navigate( 'postAdd' )}>
                 <Image style={styles.imageIcon} source={require('./assets/More.png')}/>
                 <Text style={styles.vehicletext}>More</Text>
 
-                </View>  
+                </TouchableOpacity>  
                    
                     
                     

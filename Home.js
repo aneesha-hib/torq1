@@ -21,8 +21,10 @@ export default function Home({navigation}) {
          
           
          
-    
-    <Text style={{fontsize:14}}> Dear User, your AWS App Hosting has been suspended , as it has crossed the allotted free trial space</Text>
+     <Header navigation={navigation}/><br></br>
+     <Mainpage navigation={navigation}/><br></br> 
+     <Advertisement /><br></br>
+     <Footer />
      
     </View>
     </ScrollView>

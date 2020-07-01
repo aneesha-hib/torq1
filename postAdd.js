@@ -1,5 +1,6 @@
 
-import React, { Component } from 'react';
+import React, {  useMemo,Component,useState } from 'react';
+import ReactDOM from 'react-dom';
 import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput,Platform ,Picker ,Button,   ScrollView,TouchableWithoutFeedback,} from 'react-native';
 import { RadioGroup } from 'react-native-btr';
 import * as ImagePicker from 'expo-image-picker';
@@ -11,7 +12,23 @@ import RNPickerSelect, { defaultStyles } from 'react-native-picker-select';
 import Header from'./Header.js';
 import Footer from'./Footer.js';
 // import RNPickerSelect, { defaultStyles } from './debug';
-
+const lookup = {
+  def: [{ id: '0', text: 'Choose your model' }],
+  Abarth: [
+    { id: '1', text: '124' },
+    { id: '2', text: '595' },
+    { id: '3', text: '5673' },
+    { id: '4', text: '876' },
+    { id: '5', text: '098' },
+  ],
+  Acura: [
+    { id: 'a', text: 'a' },
+    { id: 'b', text: 'b' },
+    { id: 'c', text: 'c' },
+    { id: 'd', text: 'd' },
+    { id: 'e', text: 'e' },
+  ],
+};
 const make = [
   {
     label: 'Abarth',
@@ -101,14 +118,24 @@ const make = [
   },
 ];
 
-
-
+function Example(){
+  const [dataValue, setDataValue] = useState('def');
+  const options = useMemo(() => lookup[dataValue], [dataValue]);
+  
+  const onChange = ({ target: { value } }) => {
+    setDataValue(value);
+  };
+}
 
 export default class PostAdd extends Component {
  
+ 
+  
   constructor(props) {
     super(props);
-
+   
+     
+   
     this.inputRefs = {
       firstTextInput: null,
       favSport0: null,
@@ -118,6 +145,7 @@ export default class PostAdd extends Component {
     };
 
     this.state = {
+      dataValue: 'def',
       numbers: [
         {
           label: '1',
@@ -373,7 +401,7 @@ export default class PostAdd extends Component {
 
     this.InputAccessoryView = this.InputAccessoryView.bind(this);
   }
-
+  
   InputAccessoryView() {
   }
   render() {
@@ -458,17 +486,32 @@ export default class PostAdd extends Component {
     
               <Image source={require('./assets/exclamation.png')} style={styles.ImageStyle} />
               <Text style={{marginTop:20,color:'#546b8a'}}>  Model:</Text> 
-                <View style={styles. MainContainer8}>     
-                <ScrollView
+                <View style={styles. MainContainer8}>   
+                {/* <select onChange={this.setState({})}>
+        <option value='def'>Choose your car</option>
+        <option value='mazda'>Mazda</option>
+        <option value='bmv'>BMV</option>
+      </select>
+      <hr />
+      
+
+      <select disabled={dataValue === 'def'}>
+        {[...lookup.def, ...options].map(({ id, text }) => (
+          <option key={id} value={id}>
+            {text}
+          </option>
+        ))}
+      </select>   */}
+                {/* <ScrollView
           style={styles.scrollContainer}
           contentContainerStyle={styles.scrollContentContainer}>
          
 
-          <View paddingVertical={5} />
+          <View paddingVertical={5} /> */}
 
          
           {/* and iOS onUpArrow/onDownArrow toggle example */}
-          <RNPickerSelect
+          {/* <RNPickerSelect
             placeholder={placeholder}
             items={model}
             onValueChange={value => {
@@ -492,7 +535,7 @@ export default class PostAdd extends Component {
               return <Chevron size={1.5} color="gray" />;
             }}
           />
-        </ScrollView>
+        </ScrollView> */}
         </View>
            </View>
            <View style={{flexDirection:'row',flex:1,backgroundColor:'#dee3e9',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'1%'}}>
@@ -1242,3 +1285,4 @@ const pickerSelectStyles = StyleSheet.create({
     paddingRight: 30, // to ensure the text is never behind the icon
   },
 });
+// ReactDOM.render(<Example />, document.getElementById('root'));

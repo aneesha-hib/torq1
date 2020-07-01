@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     height:width*.06,
     width:width*.004,
     flex:1,
-    resizeMode:'center',
+    resizeMode:'contain',
     marginLeft:width*.01,
     
   },

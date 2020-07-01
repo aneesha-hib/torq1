@@ -20,7 +20,7 @@ export default function LoginMain({navigation}) {
                           <Image style={styles.imageIcon} source={require('./assets/Car.png')}  />
                           <Text style={styles.vehicletext} >Car</Text>
                      </TouchableOpacity>
-                     <TouchableOpacity style={styles.vehiclecontainerItem}  onPress={() => navigation.navigate( 'postAdd' )}>
+                     <TouchableOpacity style={styles.vehiclecontainerItem}  onPress={() => navigation.navigate( 'Example' )}>
                           <Image style={styles.imageIcon} source={require('./assets/SUV.png')}/>
                           <Text style={styles.vehicletext}>SUV</Text>
 

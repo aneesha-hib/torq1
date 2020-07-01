@@ -4,6 +4,7 @@ import { StyleSheet, Text, View ,Image ,Button,SafeAreaView,Dimensions, PixelRat
 import SearchBar from './Searchbar.js';
 import {widthPercentageToDP , heightPercentageToDP } from 'react-native-responsive-screen';
 import handleClick from './Home.js';
+import { TouchableHighlight } from 'react-native-gesture-handler';
 
 
 
@@ -27,11 +28,18 @@ export default function Header({navigation}) {
       
                 </View>
           {/*Sign in /Sign up */}
-              <View style={styles.viewcontent}  >
+              <View style={styles.viewcontent}>
                 <Image style={styles.profileicon} source={require('./assets/Profile.png')} ></Image>
-                  <TouchableOpacity style={styles.viewcontent1} onPress={()=>navigation.navigate('Login')}>
-                        <Text style={{fontSize:width*.007}}>Sign In/Sign Up</Text>
-                  </TouchableOpacity>
+                  <View style={styles.viewcontent1}>
+                    <TouchableOpacity onPress={()=>navigation.navigate('Signin')}>
+                    <Text style={{fontSize:width*.008,fontFamily:'Arial'}}>Sign In</Text>
+                    </TouchableOpacity>
+                        <Text style={{fontSize:width*.007}}>/</Text>
+                        <TouchableOpacity onPress={()=>navigation.navigate('Signup')}>
+                    <Text style={{fontSize:width*.008,fontFamily:'Arial'}}>Sign Up</Text>
+                    </TouchableOpacity>
+                  </View>
+                  
                   
 
                 </View>
@@ -55,7 +63,7 @@ export default function Header({navigation}) {
             {/*Post Add icon */}
            <TouchableOpacity onPress={()=>navigation.navigate('LoginMain')} style={styles.postAdcontainer}>
             
-                <Text style={{resizemode:'center',color :'#354e76',fontSize:width*.008}}>Post Ad</Text>
+                <Text style={{resizemode:'center',color :'#354e76',fontSize:width*.009,fontFamily:'Arial'}}>Post Ad</Text>
            </TouchableOpacity>
             
              {/*Main icons of notification , location and chat */}
@@ -66,29 +74,29 @@ export default function Header({navigation}) {
 
             <View style={
               {flex:1,marginTop:8,flexDirection:'row',marginLeft:width*0.01}}>
-                <View style={{alignItems:'center',flex:1}}>
+                <TouchableOpacity style={{alignItems:'center',flex:1}}>
                 <Image 
                 style={styles.imageicon}
                 source={require('./assets/Notification.png')}>
               </Image>
-              <Text style={{fontSize:width*.006,flex:1}}>Notification</Text>
-                </View>
-                <View style={{alignItems:'center',flex:1}}>
+              <Text style={{fontSize:width*.008,flex:1,fontFamily:'Arial'}}>Notification</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={{alignItems:'center',flex:1}}>
                 <Image 
                 style={styles.imageicon}
                 source={require('./assets/NearMe.png')}>
                </Image>
-               <Text style={{fontSize:width*.006}}>Near Me</Text>
+               <Text style={{fontSize:width*.008,fontFamily:'Arial'}}>Near Me</Text>
 
-                </View>
-                <View style={{alignItems:'center',flex:1}}>
+                </TouchableOpacity>
+                <TouchableOpacity style={{alignItems:'center',flex:1}}>
                 <Image 
                 style={styles.imageicon}
                 source={require('./assets/Chat.png')}>
               </Image>
-              <Text style={{fontSize:width*.006}}>Chat</Text>
+              <Text style={{fontSize:width*.008,fontFamily:'Arial'}}>Chat</Text>
 
-                </View>
+                </TouchableOpacity>
               
               
               </View><br></br>

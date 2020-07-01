@@ -90,7 +90,7 @@ export default function Mainpage({navigation}) {
 
           </View>
           <View style={{position: 'absolute', top: width*.0000000009, left: '28%', right: 0, bottom: width*.1, backgroundColor:'#fff',width:width*.06,height:width*.01,color:'#354e76',alignItems:'center'}}>
-  <Text style={{fontSize:width*.01,color:'#354e76',paddingBottom:width*.1}}>Vehicles</Text>
+  <Text style={{fontSize:width*.01,color:'#354e76',paddingBottom:width*.1,fontFamily:'Arial'}}>Vehicles</Text>
 </View>
           <br></br><br></br>
           <View style={styles.container}>
@@ -164,7 +164,7 @@ export default function Mainpage({navigation}) {
 
           </View>
           <View style={{position: 'absolute', top:width *.2125, left: '27.5%', right: 0, bottom: 0, backgroundColor:'#fff',width:width*.06,height:width*.02,alignItems:'center'}}>
-           <Text style={{fontSize:width*.01,color:'#354e76'}}>Directory</Text>
+           <Text style={{fontSize:width*.01,color:'#354e76',fontFamily:'Arial'}}>Directory</Text>
 </View>
          
 
@@ -229,12 +229,13 @@ const styles = StyleSheet.create({
   vehicletext:
   {
     flex:1,
-    fontSize:width*.006,
+    fontSize:width*.007,
     paddingBottom:'10px',
     color:'#354e76',
     marginLeft:'6%',
     resizeMode:'center',
-    height:'auto'
+    height:'auto',
+    fontFamily:'Arial'
     
   },
   subHeading:

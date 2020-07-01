@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
   {
       color:'#36486a',
       fontSize:width*.01,
-      
+      fontFamily:'Arial'
   }
 });
 

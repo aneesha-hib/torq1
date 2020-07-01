@@ -9,9 +9,14 @@ import LoginMain from './LoginMain.js'
 import PostaddVan from './PostaddVan.js'
 import Example from './Example.js'
 import * as React from 'react';
+import Signin from './Signin';
+import Signup from './Signup';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 const Stack = createStackNavigator();
+
+
 export default function App() {
   return (
     <NavigationContainer>
@@ -23,6 +28,8 @@ export default function App() {
       <Stack.Screen name="LoginMain" component={LoginMain} />
       <Stack.Screen name="PostaddVan" component={PostaddVan} />
       <Stack.Screen name="Example" component={Example} />
+      <Stack.Screen name="Signin" component={Signin} />
+      <Stack.Screen name="Signup" component={Signup} />
     </Stack.Navigator>
   </NavigationContainer>
   );

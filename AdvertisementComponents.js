@@ -230,6 +230,7 @@ const styles=StyleSheet.create(
       color:'#354e76',
       fontSize:width*.009,
       marginBottom:'2%'
+      ,fontFamily:'Arial'
 
   },
   featuredAdContainerIndividual:
@@ -272,7 +273,7 @@ const styles=StyleSheet.create(
     color:'#354e76',
   
     marginRight:'2%'
-    
+    ,fontFamily:'Arial'
   },
   iconImage:
   {

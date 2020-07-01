@@ -57,17 +57,17 @@ export default function Footer() {
          {/*Section 3*/}
         
             <View style={{flex:1,flexDirection:'row',justifyContent:'space-between'}}>
-              <Text style={{color:'#354e76',fontSize:width*.01}}>Copyright 2020 Torq.qa</Text>
+              <Text style={{color:'#354e76',fontSize:width*.011,fontFamily:'Arial'}}>Copyright 2020 Torq.qa</Text>
               <View style={{flexDirection:'row',flex:1,justifyContent:'center'}}>
               <Image style={styles.imageIcon} source={require('./assets/logo.png')}></Image>
-                <Text style={{color:'#354e76',fontSize:width*.01}}>&nbsp;TorQ</Text>
+                <Text style={{color:'#354e76',fontSize:width*.011,fontFamily:'Arial'}}>&nbsp;TorQ</Text>
 
               </View>
                 
 
               
               <View style={{flexDirection:'row'}}>
-                  <Text style={{color:'#354e76',fontSize:width*.01}}>Available on </Text>
+                  <Text style={{color:'#354e76',fontSize:width*.011,fontFamily:'Arial'}}>Available on </Text>
                   
                   <Image style={styles.imageIcon} source={require('./assets/googleplaystore.png')}></Image>
                   <Text>&nbsp;&nbsp;&nbsp;</Text>
@@ -157,6 +157,7 @@ const styles = StyleSheet.create({
     marginRight:25,
     fontSize:width*.01,
     fontStyle:'bold',
-    flex:1
+    flex:1,
+    fontFamily:'Arial'
   }
 });

@@ -763,25 +763,25 @@ style={{ paddingTop: 8 }}
                  <View style={{flexDirection:'row'}}>
                  <View style={{flex:1,backgroundColor:'#dee3e9',bordercolor:'#ppp',borderRadius:'8px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:10,marginRight:10,marginBottom:10}}>
                  <TouchableOpacity   title="click   me   " borderRadius="80px" onPress={this._pickImage}>
-                 <Image source={require('./assets/plus.jpg')} style={styles.Plus} />
+                 <Image source={require('./assets/plus.png')} style={styles.Plus} />
                  </TouchableOpacity>
         {image && <Image source={{ uri: image }} style={styles.Plus2} />}
     </View>  
     <View style={{flex:1,backgroundColor:'#dee3e9',borderRadius:'8px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:30,marginRight:10,marginBottom:10}}>
     <TouchableOpacity   title="click   me   " borderRadius="80px" onPress={this._pickImage2}>
-                 <Image source={require('./assets/plus.jpg')} style={styles.Plus} />
+                 <Image source={require('./assets/plus.png')} style={styles.Plus} />
                  </TouchableOpacity>
         {image && <Image source={{ uri: image2 }} style={styles.Plus2} />}
       </View>
       <View style={{flex:1,backgroundColor:'#dee3e9',borderRadius:'8px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:30,marginRight:10,marginBottom:10}}>
       <TouchableOpacity   title="click   me   " borderRadius="80px" onPress={this._pickImage3}>
-                 <Image source={require('./assets/plus.jpg')} style={styles.Plus} />
+                 <Image source={require('./assets/plus.png')} style={styles.Plus} />
                  </TouchableOpacity>
         {image && <Image source={{ uri: image3 }} style={styles.Plus2} />}
       </View>
       <View style={{flex:1,backgroundColor:'#dee3e9',borderRadius:'8px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:30,marginRight:10,marginBottom:10}}>
       <TouchableOpacity   title="click   me   " borderRadius="80px" onPress={this._pickImage4}>
-                 <Image source={require('./assets/plus.jpg')} style={styles.Plus} />
+                 <Image source={require('./assets/plus.png')} style={styles.Plus} />
                  </TouchableOpacity>
         {image && <Image source={{ uri: image4 }} style={styles.Plus2} />}
       </View>
@@ -790,25 +790,25 @@ style={{ paddingTop: 8 }}
                  <View style={{flex:1,backgroundColor:'#dee3e9',borderRadius:'8px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:10,marginRight:10,marginBottom:10}}>
 
                  <TouchableOpacity   title="click   me   " borderRadius="80px" onPress={this._pickImage5}>
-                 <Image source={require('./assets/plus.jpg')} style={styles.Plus} />
+                 <Image source={require('./assets/plus.png')} style={styles.Plus} />
                  </TouchableOpacity>
         {image && <Image source={{ uri: image5 }} style={styles.Plus2} />}
     </View>  
     <View style={{flex:1,backgroundColor:'#dee3e9',borderRadius:'8px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:30,marginRight:10,marginBottom:10}}>
     <TouchableOpacity   title="click   me   " borderRadius="80px" onPress={this._pickImage6}>
-                 <Image source={require('./assets/plus.jpg')} style={styles.Plus} />
+                 <Image source={require('./assets/plus.png')} style={styles.Plus} />
                  </TouchableOpacity>
         {image && <Image source={{ uri: image6 }} style={styles.Plus2} />}
       </View>
       <View style={{flex:1,backgroundColor:'#dee3e9',borderRadius:'8px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:30,marginRight:10,marginBottom:10}}>
       <TouchableOpacity   title="click   me   " borderRadius="80px" onPress={this._pickImage7}>
-                 <Image source={require('./assets/plus.jpg')} style={styles.Plus} />
+                 <Image source={require('./assets/plus.png')} style={styles.Plus} />
                  </TouchableOpacity>
         {image && <Image source={{ uri: image7 }} style={styles.Plus2} />}
       </View>
       <View style={{flex:1,backgroundColor:'#dee3e9',borderRadius:'8px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:30,marginRight:10,marginBottom:10}}>
       <TouchableOpacity   title="click   me   " borderRadius="80px" onPress={this._pickImage8}>
-                 <Image source={require('./assets/plus.jpg')} style={styles.Plus} />
+                 <Image source={require('./assets/plus.png')} style={styles.Plus} />
                  </TouchableOpacity>
         {image && <Image source={{ uri: image8 }} style={styles.Plus2} />}
       </View>

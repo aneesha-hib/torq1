@@ -1,10 +1,9 @@
 import React ,{Component} from 'react';
 import { StyleSheet, Text, View, ScrollView ,Image,Dimensions,Platform} from 'react-native';
-import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/_carousel.min.css";
+
 import Screen from './Screen.js';
 import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen';
-import { render } from 'react-dom';
+
 import AdvertisementComponents from './AdvertisementComponents'
 
 

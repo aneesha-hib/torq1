@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput,Platform ,Picker ,Button,   ScrollView,TouchableWithoutFeedback,} from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput,Platform ,Picker ,Button,   ScrollView,TouchableWithoutFeedback} from 'react-native';
 import { RadioGroup } from 'react-native-btr';
 import * as ImagePicker from 'expo-image-picker';
 import Constants from 'expo-constants';
@@ -10,7 +10,7 @@ import { Ionicons } from '@expo/vector-icons';
 import RNPickerSelect, { defaultStyles } from 'react-native-picker-select';
 import Header from'./Header.js';
 import Footer from'./Footer.js';
-import Example from './Example.js';
+import Example1 from './Example1.js';
 import AlertBox from './AlertBox';
 // import RNPickerSelect, { defaultStyles } from './debug';
 
@@ -106,7 +106,7 @@ const make = [
 
 
 
-export default class PostAdd extends Component {
+export default class postAddSUV extends Component {
  
   constructor(props) {
     super(props);
@@ -419,7 +419,7 @@ export default class PostAdd extends Component {
   <Header navigation={this.props.navigation} />
     <View style={{alignItems:'center'}}>
     
-    <Example />
+    <Example1 />
            <View style={{flexDirection:'row',flex:1,borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
     
              

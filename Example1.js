@@ -91,12 +91,12 @@ class Example extends React.Component {
   componentDidMount() {
     this.setState({
       countries : [
-        { name: 'Abarth', states: [ '124', '595', '695'] },
-        { name: 'Acura', states: [ 'ILX', 'TLX', 'RLX','NSX','CL','EL','RL','TL','RSX','TSX','Integra','Legend','Vigor'] },
-        { name: 'Alfa Romeo', states: [ 'Giulia', 'Giulietta', 'Brera','Milto','Milano','Spider','GT','GTV','GTV6','4C','147','156','159','164','166','2000'] },
-        { name: 'Aston Martin', states: [ 'DB7', 'DB9', 'DB11','DBS','Cygnet','One 77','Rapide','Valkyire','Volante','Vantage','Vanquish','Virage','Zagato'] },
-        { name: 'Audi', states: [ '80', '90', '100','200','A1','A3','A4','A5','A6','A7','A8','S','RS','R8','TT','Cabriolet','Quattro'] },
-        {name: 'BAIC',states:['D20','D50','EC3','EU5']},
+        { name: 'Acura', states: [ 'MDX', 'RDX', 'SLX','ZDX'] },
+        { name: 'Alfa Romeo', states: [ 'Stelvio'] },
+        { name: 'Aston Martin', states: [ 'DBX'] },
+        { name: 'Audi', states: [ 'Q2', 'Q3', 'Q3','Q5','Q7','Q8','RSQ8'] },
+        { name: 'BAIC', states: [ 'X25', 'X35', 'X55','X65','BJ20','BJ40','M20'] },
+        { name: 'Bentley', states:['Bentayga']}
   
       ]
     });

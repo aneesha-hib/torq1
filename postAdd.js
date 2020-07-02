@@ -12,6 +12,7 @@ import Header from'./Header.js';
 import Footer from'./Footer.js';
 import Example from './Example.js';
 import AlertBox from './AlertBox';
+import CheckBox from './CheckBox';
 // import RNPickerSelect, { defaultStyles } from './debug';
 
 const make = [
@@ -722,7 +723,7 @@ contentContainerStyle={styles.scrollContentContainer}>
       </View>
       <Text style={{fontSize:12,color:'#546b8a',fontStyle:'bold'}}> If you have problems With flash please use simpler form </Text>
       <View style={{flexDirection:'row'}}>
-      <Image source={require('./assets/mar.png')} style={styles.Sq} /> 
+     <CheckBox />
       <Text style={{fontSize:15,color:'#8d1b3c',fontStyle:'bold',marginTop:'4%'}}>Agree to the terms and conditions </Text>
        </View>
       

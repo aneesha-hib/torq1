@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput,Platform ,Picker ,Button,   ScrollView,TouchableWithoutFeedback} from 'react-native';
-import { RadioGroup } from 'react-native-btr';
+import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput,Platform ,Picker ,Button,   ScrollView,TouchableWithoutFeedback,} from 'react-native';
+import { RadioGroup} from 'react-native-btr';
 import * as ImagePicker from 'expo-image-picker';
 import Constants from 'expo-constants';
 import * as Permissions from 'expo-permissions';
@@ -10,27 +10,40 @@ import { Ionicons } from '@expo/vector-icons';
 import RNPickerSelect, { defaultStyles } from 'react-native-picker-select';
 import Header from'./Header.js';
 import Footer from'./Footer.js';
-import Example1 from './Example1.js';
+import ExampleBike from './ExampleBike.js';
 import AlertBox from './AlertBox';
-import CheckBox from './CheckBox'
+import CheckBox from './CheckBox';
+
 // import RNPickerSelect, { defaultStyles } from './debug';
 
-const make = [
+const type = [
   {
-    label: 'Abarth',
-    value: 'Abarth',
+    label: 'Buggy',
+    value: 'Buggy',
   },
   {
-    label: 'Acura',
-    value: 'Acura',
+    label: 'ATV',
+    value: 'ATV',
   },
   {
-    label: 'Alfa Romeo',
-    value: 'Alfa Romeo',
+    label: 'Motorbike',
+    value: 'Motorbike',
   },
   {
-    label: 'Aston Martin',
-    value: 'Aston MartinAlfa Romeo',
+    label: 'Scooter',
+    value: 'Scooter',
+  },
+  {
+    label: 'Tourer',
+    value: 'Tourer',
+  },
+  {
+    label: '3 Wheeler',
+    value: '3 Wheeler',
+  },
+  {
+    label: 'Other',
+    value: 'Other',
   },
 ],
  model = [
@@ -107,7 +120,7 @@ const make = [
 
 
 
-export default class postAddSUV extends Component {
+export default class PostBike extends Component {
  
   constructor(props) {
     super(props);
@@ -419,35 +432,54 @@ export default class postAddSUV extends Component {
 
   <Header navigation={this.props.navigation} />
     <View style={{alignItems:'center'}}>
+    <View style={{flexDirection:'row',flex:1,borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
     
-    <Example1 />
-           <View style={{flexDirection:'row',flex:1,borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
-    
-             
-              <Text style={{marginTop:20,color:'#000',fontFamily:'arial' ,fontSize:16 , color:'#546b8a',}}>            Trim           : </Text>     
-              <TextInput style = {styles. name3inputs}
-               underlineColorAndroid = "transparent"
-             placeholder="Enter Trim Level"
-             backgroundColor= 'transparent'
-                 placeholderTextColor = "#000"
-                 autoCapitalize = "none"
-               />
+      <Image source={require('./assets/exclamation.png')} style={styles.ImageStyle} />
+      <Text style={{marginTop:20,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>Type        :     </Text>     
+      <View style={styles. MainContainer8}>     
+      <ScrollView
+          style={styles.scrollContainer}
+          contentContainerStyle={styles.scrollContentContainer}>
+         
 
-             </View>
-             <View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
- 
-    <Text style={{marginTop:20,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>             Year         : </Text>  
-    <TextInput style = {styles. name3inputs}
-               underlineColorAndroid = "transparent"
-               placeholder="Enter The Year"
-               backgroundColor= 'transparent'
-                   placeholderTextColor = "#000"
-                 autoCapitalize = "none"
-               />
- 
+          <View paddingVertical={5} />
 
-   </View>
-
+         
+          {/* and iOS onUpArrow/onDownArrow toggle example */}
+          <RNPickerSelect
+            placeholder={placeholder}
+            items={type}
+            onValueChange={value => {
+              this.setState({
+                favSport0: value,
+              });
+            }}
+            style={{
+              inputAndroid: {
+                backgroundColor: 'transparent',
+                borderColor:'#fff',
+                fontFamily:'arial',
+                fontSize:15,
+                marginTop:7
+              },
+              iconContainer: {
+                top: 5,
+                right: 15,
+              },
+            }}
+            value={this.state.favSport1}
+            useNativeAndroidPickerStyle={true}
+            textInputProps={{ underlineColorAndroid: 'cyan' }}
+            // Icon={() => {
+            //   return <Chevron size={1.5} color="gray" />;
+            // }}
+          />
+        </ScrollView>
+        </View>
+          
+           </View>
+   
+<ExampleBike />
                 
                  <View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
     
@@ -612,7 +644,6 @@ contentContainerStyle={styles.scrollContentContainer}>
   style={{
     inputAndroid: {
       backgroundColor: 'transparent',
-      borderColor:'#fff',
       fontFamily:'arial',
       fontSize:15,
       marginTop:7,
@@ -624,11 +655,11 @@ contentContainerStyle={styles.scrollContentContainer}>
     },
   }}
   value={this.state.favSport1}
-  useNativeAndroidPickerStyle={true}
+  useNativeAndroidPickerStyle={false}
   textInputProps={{ underlineColorAndroid: 'cyan' }}
-//   Icon={() => {
-//     return <Chevron size={1.5} color="gray" />;
-//   }}
+  Icon={() => {
+    return <Chevron size={1.5} color="gray" />;
+  }}
 />
 </ScrollView>
 </View>
@@ -657,7 +688,6 @@ contentContainerStyle={styles.scrollContentContainer}>
        backgroundColor= 'transparent'
        placeholderTextColor = "#000"
          autoCapitalize = "none"
-         multiline={true}
         />
 
    </View>
@@ -723,7 +753,7 @@ contentContainerStyle={styles.scrollContentContainer}>
       </View>
       <Text style={{fontSize:12,color:'#546b8a',fontStyle:'bold'}}> If you have problems With flash please use simpler form </Text>
       <View style={{flexDirection:'row'}}>
-     <CheckBox />
+     <CheckBox></CheckBox>
       <Text style={{fontSize:15,color:'#8d1b3c',fontStyle:'bold',marginTop:'4%'}}>Agree to the terms and conditions </Text>
        </View>
       

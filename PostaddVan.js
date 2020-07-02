@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput,Platform ,Picker ,Button,   ScrollView,TouchableWithoutFeedback,} from 'react-native';
-import { RadioGroup } from 'react-native-btr';
+import { RadioGroup} from 'react-native-btr';
 import * as ImagePicker from 'expo-image-picker';
 import Constants from 'expo-constants';
 import * as Permissions from 'expo-permissions';
@@ -10,118 +10,104 @@ import { Ionicons } from '@expo/vector-icons';
 import RNPickerSelect, { defaultStyles } from 'react-native-picker-select';
 import Header from'./Header.js';
 import Footer from'./Footer.js';
-import Example1 from './Example1'
+import Example2 from './Example2.js';
+import AlertBox from './AlertBox';
+import CheckBox from './CheckBox';
 // import RNPickerSelect, { defaultStyles } from './debug';
 
 const make = [
   {
-    label: 'Ashok Leyland',
-    value: 'Ashok Leyland',
+    label: 'Abarth',
+    value: 'Abarth',
   },
   {
-    label: 'Baic',
-    value: 'Baic',
+    label: 'Acura',
+    value: 'Acura',
   },
   {
-    label: 'Buick',
-    value: 'Buick',
+    label: 'Alfa Romeo',
+    value: 'Alfa Romeo',
   },
   {
-    label: 'Brilliance',
-    value: 'Brilliance',
+    label: 'Aston Martin',
+    value: 'Aston MartinAlfa Romeo',
   },
 ],
  model = [
   {
-    label: 'Oyster',
-    value: 'Oyster',
+    label: '124',
+    value: '124',
   },
   {
-    label: 'Falcon',
-    value: 'Falcon',
+    label: '595',
+    value: '595',
   },
   {
-    label: 'Partner',
-    value: 'Partner',
-  },
-   {
-    label: 'Bus',
-    value: 'Bus',
-  },
-  {
-    label: 'Truck',
-    value: 'Truck',
-  },
-  {
-    label: 'Mz40',
-    value: 'Mz40',
-  },
-  {
-    label: 'Mz45',
-    value: 'Mz45',
-  },
-  {
-    label: 'Terraza',
-    value: 'Terraza',
+    label: '695',
+    value: '695',
   },
 ],
  year = [
- 
   {
-    label: '8',
-    value: '8',
+    label: '2000',
+    value: '2000',
+  },
+  {
+    label: 'TLX',
+    value: 'TLX',
   },
   {
     label: '9',
     value: '9',
   },
 ],
-city = [
-    {
-      label: 'AI Khor',
-      value: 'AI Khor',
-    },
-    {
-      label: 'AI Rayyan',
-      value: 'AI Rayyan',
-    },
-    {
-      label: 'AI Shahania',
-      value: 'AI Shahania',
-    },
-    {
-      label: 'AI Shamal',
-      value: 'AI  Shamal',
-    },
-    {
-      label: 'AI Wakra',
-      value: 'AI Wakra',
-    },
-    {
-      label: 'Doha',
-      value: 'Doha',
-    },
-    {
-      label: 'Dukhan',
-      value: 'Dukhan',
-    },
-    {
-      label: 'Lusail',
-      value: 'Lusail',
-    },
-    {
-      label: 'Mesaieed',
-      value: 'Mesaieed',
-    },
-    {
-      label: 'Umsalal',
-      value: 'Umsalal',
-    },
-  ];
+ city = [
+  {
+    label: 'AI Khor',
+    value: 'AI Khor',
+  },
+  {
+    label: 'AI Rayyan',
+    value: 'AI Rayyan',
+  },
+  {
+    label: 'AI Shahania',
+    value: 'AI Shahania',
+  },
+  {
+    label: 'AI Shamal',
+    value: 'AI  Shamal',
+  },
+  {
+    label: 'AI Wakra',
+    value: 'AI Wakra',
+  },
+  {
+    label: 'Doha',
+    value: 'Doha',
+  },
+  {
+    label: 'Dukhan',
+    value: 'Dukhan',
+  },
+  {
+    label: 'Lusail',
+    value: 'Lusail',
+  },
+  {
+    label: 'Mesaieed',
+    value: 'Mesaieed',
+  },
+  {
+    label: 'Umsalal',
+    value: 'Umsalal',
+  },
+];
 
 
 
-export default class PostaddVan extends Component {
+
+export default class PostAdd extends Component {
  
   constructor(props) {
     super(props);
@@ -286,8 +272,8 @@ export default class PostaddVan extends Component {
         },
   
         {
-          label: 'Need Maintenance',
-          value: 'Need Maintenance',
+          label: 'NeedMaintenance',
+          value: 'NeedMaintenance',
           checked: false,
           color: '#000',
           disabled: false,
@@ -389,10 +375,13 @@ export default class PostaddVan extends Component {
     };
 
     this.InputAccessoryView = this.InputAccessoryView.bind(this);
+    
+    
   }
 
   InputAccessoryView() {
   }
+  
   render() {
     let { image } = this.state;
     let { image2 } = this.state;
@@ -415,9 +404,11 @@ export default class PostaddVan extends Component {
     // let selectedItem4 = this.state.radioButtons4.find(e => e.checked == true);
     // selectedItem4 = selectedItem4 ? selectedItem4.value : this.state.radioButtons4[0].value;
     const placeholder = {
-      label: 'Select a sport...',
+      label: 'Choose Your Option..',
       value: null,
-      color: '#9EA0A4',
+      color: '#546b8a',
+      fontFamily:'poppins',
+      fontSize:50,
     };
  
     return (
@@ -428,76 +419,57 @@ export default class PostaddVan extends Component {
 
   <Header navigation={this.props.navigation} />
     <View style={{alignItems:'center'}}>
-    <Example1/>
     
-           <View style={{flexDirection:'row',flex:1,backgroundColor:'#dee3e9',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'1%'}}>
+    <Example2 />
+          
+             <View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
+ 
+    <Text style={{marginTop:20,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>             Year         : </Text>  
+    <TextInput style = {styles. name3inputs}
+               underlineColorAndroid = "transparent"
+               placeholder="Enter The Year"
+               backgroundColor= 'transparent'
+                   placeholderTextColor = "#000"
+                 autoCapitalize = "none"
+               />
+ 
+
+   </View>
+
+                
+                 <View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
     
-              <Image source={require('./assets/circle.png')} style={styles.ImageStyle} />
-              <Text style={{marginTop:20,color:'#546b8a'}}>  Trim  : </Text>     
+          
+                
+              
+                    <Text style={{marginTop:20,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>           Mileage         :</Text>     
               <TextInput style = {styles. name3inputs}
                underlineColorAndroid = "transparent"
    
-                 placeholderTextColor = "#8d1b3e"
+               placeholder="    KM"
+               backgroundColor= 'transparent'
+               placeholderTextColor = "#000"
                  autoCapitalize = "none"
                />
 
-             </View>
-             <View style={{flexDirection:'row',flex:1,backgroundColor:'#dee3e9',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'1%'}}>
+       </View>
+       <View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
     
-    <Image source={require('./assets/circle.png')} style={styles.ImageStyle} />
-    <Text style={{marginTop:20,color:'#546b8a'}}>  Year  : </Text>     
-    <TextInput style = {styles. name3inputs}
-     underlineColorAndroid = "transparent"
-
-       placeholderTextColor = "#8d1b3e"
-       autoCapitalize = "none"
-     />
-
-   </View>
-               
-
                 
-                 <View style={{flexDirection:'row',flex:1,backgroundColor:'#dee3e9',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'1%'}}>
-    
-                  <Image source={require('./assets/exclamation.png')} style={styles.ImageStyle} />
-                 <Text style={{marginTop:20,color:'#546b8a'}}>  Mileage : </Text>     
-                <TextInput style = {styles. name2inputs}
-                   underlineColorAndroid = "transparent"
-
-                   placeholderTextColor = "#8d1b3e"
-                    autoCapitalize = "none"
-                />
-                 <TextInput style = {styles. name1inputs}
-                   underlineColorAndroid = "transparent"
-                    placeholder="    KM"
-                    placeholderTextColor = "#546b8a"
-                    autoCapitalize = "none"
-                />
-
+                 <Text style={{marginTop:20,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>        Engine Size      :</Text>     
+                
+              <TextInput style = {styles. name3inputs}
+               underlineColorAndroid = "transparent"
+   
+               placeholder="      L"
+               backgroundColor= 'transparent'
+               placeholderTextColor = "#000"
+                 autoCapitalize = "none"
+               />
        </View>
-       <View style={{flexDirection:'row',flex:1,backgroundColor:'#dee3e9',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'1%'}}>
+       <View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'18px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
     
-                  <Image source={require('./assets/circle.png')} style={styles.ImageStyle} />
-                 <Text style={{marginTop:20,color:'#546b8a'}}>Engine Size:</Text>     
-                <TextInput style = {styles. name2inputs}
-                   underlineColorAndroid = "transparent"
-
-                   placeholderTextColor = "#8d1b3e"
-                    autoCapitalize = "none"
-                />
-                 <TextInput style = {styles. name1inputs}
-                   underlineColorAndroid = "transparent"
-                    placeholder="      L"
-                   
-                   placeholderTextColor = "#546b8a"
-                    autoCapitalize = "none"
-                />
-
-       </View>
-       <View style={{flexDirection:'row',flex:1,backgroundColor:'#dee3e9',borderRadius:'18px',Height:'50%',Width:'50%',marginTop:'1%'}}>
-    
-                  <Image source={require('./assets/circle.png')} style={styles.ImageStyle} />
-                 <Text style={{marginTop:20,color:'#546b8a'}}>Drive Terrain: </Text>     
+                 <Text style={{marginTop:40,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>          Drive Terrain   : </Text>     
                 
                 
       <View style={styles.MainContainer}>
@@ -513,29 +485,29 @@ export default class PostaddVan extends Component {
 </View>
 
        </View>
-       <View style={{flexDirection:'row',flex:1,backgroundColor:'#dee3e9',borderRadius:'18px',Height:'50%',Width:'50%',marginTop:'1%'}}>
+       <View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'18px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
     
-    <Image source={require('./assets/circle.png')} style={styles.ImageStyle} />
-   <Text style={{marginTop:20,color:'#546b8a'}}>Transmission: </Text>     
+  
+   <Text style={{marginTop:40,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>        Transmission     :</Text>     
   
   
-<View style={styles.MainContainer2}>
+<View style={styles.MainContainer12}>
 
 <RadioGroup
 color='#546b8a'
 labelStyle={{ fontSize: 14, }}
 radioButtons={this.state.radioButtons2}
 onPress={radioButtons2=> this.setState({ radioButtons2 })}
-style={{ paddingTop: 8 }}
+style={{ paddingTop: 8 ,flexDirection:'row'}}
 />
 
 </View>
 
 </View>
-<View style={{flexDirection:'row',flex:1,backgroundColor:'#dee3e9',borderRadius:'18px',Height:'50%',Width:'50%',marginTop:'1%'}}>
+<View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'18px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
     
-    <Image source={require('./assets/circle.png')} style={styles.ImageStyle} />
-   <Text style={{marginTop:20,color:'#546b8a'}}>   Fuel Type : </Text>     
+ 
+   <Text style={{marginTop:40,color:'#546b8a',marginLeft:20,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>       Fuel Type     : </Text>     
   
   
 <View style={styles.MainContainer3}>
@@ -545,7 +517,7 @@ color='#546b8a'
 labelStyle={{ fontSize: 14, }}
 radioButtons={this.state.radioButtons3}
 onPress={radioButtons3=> this.setState({ radioButtons3})}
-style={{ paddingTop: 8 }}
+style={{ paddingTop: 8 ,flexDirection:'row'}}
 />
 
 </View>
@@ -553,10 +525,9 @@ style={{ paddingTop: 8 }}
 </View>
 
 
-<View style={{flexDirection:'row',flex:1,backgroundColor:'#dee3e9',borderRadius:'18px',Height:'50%',Width:'50%',marginTop:'1%'}}>
-    
-    <Image source={require('./assets/circle.png')} style={styles.ImageStyle} />
-   <Text style={{marginTop:20,color:'#546b8a'}}>  Condition :  </Text>     
+<View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'18px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
+
+   <Text style={{marginTop:45,color:'#546b8a',fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>    Condition:</Text>     
   
   
 <View style={styles.MainContainer2}>
@@ -566,139 +537,144 @@ color='#546b8a'
 labelStyle={{ fontSize: 14, }}
 radioButtons={this.state.radioButtons4}
 onPress={radioButtons4=> this.setState({ radioButtons4})}
-style={{ paddingTop: 8 }}
+style={{ paddingTop: 8,flexDirection:'row' }}
 />
 
 </View>
 
 </View>
-<View style={{flexDirection:'row',flex:1,backgroundColor:'#dee3e9',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'1%'}}>
+<View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
     
     <Image source={require('./assets/exclamation.png')} style={styles.ImageStyle} />
-   <Text style={{marginTop:20,color:'#546b8a'}}>   Price   :  </Text>     
-  <TextInput style = {styles. name2inputs}
-     underlineColorAndroid = "transparent"
+  
 
-     placeholderTextColor = "#8d1b3e"
-      autoCapitalize = "none"
-  />
-   <TextInput style = {styles. name1inputs}
-     underlineColorAndroid = "transparent"
-      placeholder="    QR"
-      placeholderTextColor = "#546b8a"
-      autoCapitalize = "none"
-  />
+      <Text style={{marginTop:20,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>  Price       : </Text>     
+<TextInput style = {styles. name3inputs}
+ underlineColorAndroid = "transparent"
+
+ placeholder="    QR"
+ backgroundColor= 'transparent'
+ placeholderTextColor = "#000"
+   autoCapitalize = "none"
+ />
 
 </View>
-<View style={{flexDirection:'row',flex:1,backgroundColor:'#dee3e9',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'1%'}}>
+<View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
     
-    <Image source={require('./assets/circle.png')} style={styles.ImageStyle} />
-    <Text style={{marginTop:20,color:'#546b8a'}}>Contact:</Text>     
-    <TextInput style = {styles. name3inputs}
-     underlineColorAndroid = "transparent"
-
-       placeholderTextColor = "#8d1b3e"
-       autoCapitalize = "none"
-     />
-
-   </View>
-   <View style={{flexDirection:'row',flex:1,backgroundColor:'#dee3e9',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'1%'}}>
-
     <Image source={require('./assets/exclamation.png')} style={styles.ImageStyle} />
-        <Text style={{marginTop:20,color:'#546b8a'}}>  City   : </Text>     
-        <View style={styles. MainContainer8}>     
-        <ScrollView
-          style={styles.scrollContainer}
-          contentContainerStyle={styles.scrollContentContainer}>
-         
+  
 
-          <View paddingVertical={5} />
+      <Text style={{marginTop:20,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>  Contact    : </Text>     
+<TextInput style = {styles. name3inputs}
+ underlineColorAndroid = "transparent"
 
-         
-          {/* and iOS onUpArrow/onDownArrow toggle example */}
-          <RNPickerSelect
-            placeholder={placeholder}
-            items={city}
-            onValueChange={value => {
-              this.setState({
-                favSport0: value,
-              });
-            }}
-            style={{
-              inputAndroid: {
-                backgroundColor: 'transparent',
-              },
-              iconContainer: {
-                top: 5,
-                right: 15,
-              },
-            }}
-            value={this.state.favSport1}
-            useNativeAndroidPickerStyle={true}
-            textInputProps={{ underlineColorAndroid: 'cyan' }}
-            // Icon={() => {
-            //   return <Chevron size={1.5} color="gray" />;
-            // }}
-          />
-        </ScrollView>
-        </View>
+ placeholder="Enter The Contact Number"
+ backgroundColor= 'transparent'
+ placeholderTextColor = "#000"
+   autoCapitalize = "none"
+ />
 
-       </View>
-       <View style={styles.container}>
-       <View style={{flexDirection:'row',flex:1,backgroundColor:'#dee3e9',borderRadius:'18px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:10,marginRight:10}}>
+</View>
+<View style={{flexDirection:'row',flex:1,borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
+    
+    <Image source={require('./assets/exclamation.png')} style={styles.ImageStyle} />
+    <Text style={{marginTop:20,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>City            :</Text> 
+      <View style={styles. MainContainer8}>     
+      <ScrollView
+style={styles.scrollContainer}
+contentContainerStyle={styles.scrollContentContainer}>
+
+
+<View paddingVertical={5} />
+
+
+{/* and iOS onUpArrow/onDownArrow toggle example */}
+<RNPickerSelect
+  placeholder={placeholder}
+  items={city}
+  onValueChange={value => {
+    this.setState({
+      favSport0: value,
+    });
+  }}
+  style={{
+    inputAndroid: {
+      backgroundColor: 'transparent',
+      borderColor:'#fff',
+      fontFamily:'arial',
+      fontSize:15,
+      marginTop:7,
+      marginLeft:25
+    },
+    iconContainer: {
+      top: 5,
+      right: 15,
+    },
+  }}
+  value={this.state.favSport1}
+  useNativeAndroidPickerStyle={true}
+  textInputProps={{ underlineColorAndroid: 'cyan' }}
+  // Icon={() => {
+  //   return <Chevron size={1.5} color="gray" />;
+  // }}
+/>
+</ScrollView>
+</View>
+ </View>
+    
+       <View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'18px',Height:'50%',Width:'50%',marginTop:'3%',marginLeft:10,marginRight:10,borderColor:'#dcdcdc',borderWidth:2}}>
 
 <Image source={require('./assets/exclamation.png')} style={styles.ImageStyle} />
-    <Text style={{marginTop:20,color:'#546b8a'}}>  Title   :    </Text>     
-      <TextInput style = {styles. name4inputs}
+    <Text style={{marginTop:20,color:'#546b8a'}}>  Title        :    </Text>     
+      <TextInput style = {styles. name5inputs}
        underlineColorAndroid = "transparent"
-
-       placeholderTextColor = "#8d1b3e"
-       autoCapitalize = "none"
+       placeholder="Enter The Title"
+ backgroundColor= 'transparent'
+ placeholderTextColor = "#000"
+   autoCapitalize = "none"
         />
 
    </View>
-   <View style={{flexDirection:'row',flex:1,backgroundColor:'#dee3e9',borderRadius:'18px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:10,marginRight:10,marginBottom:10}}>
+   <View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'18px',Height:'50%',Width:'50%',marginBottom:'3%',marginTop:'3%',marginLeft:10,marginRight:10,borderColor:'#dcdcdc',borderWidth:2}}>
 
 
-    <Text style={{marginTop:20,color:'#546b8a',marginLeft:'5%'}}> Description:</Text>     
+    <Text style={{marginTop:20,color:'#546b8a',marginLeft:'5%'}}>              Description:</Text>     
       <TextInput style = {styles. name4inputs}
        underlineColorAndroid = "transparent"
-
-       placeholderTextColor = "#8d1b3e"
-       autoCapitalize = "none"
+       placeholder="Enter The Description"
+       backgroundColor= 'transparent'
+       placeholderTextColor = "#000"
+         autoCapitalize = "none"
         />
 
    </View>
    
-       </View>
+     
       
-<View style={{flexDirection:'row',flex:1,backgroundColor:'#dee3e9',borderRadius:'18px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:10,marginRight:10,marginBottom:10}}>
+<View style={{flexDirection:'row',flex:1,backgroundColor:'#dee3e9',borderRadius:'18px',Height:'50%',Width:'50%',marginLeft:10,marginRight:10,marginBottom:10}}>
 
 </View>
-       <View style={{backgroundColor:'#fff',position:'absolute',top:'68.7%',left:'37%',size:'11%'}}>
-                 <Text style={{fontSize:18,color:'#546b8a',fontStyle:'bold'}}>  Add Details  </Text>
-                 
-                 </View>
+     
                  <View style={{flexDirection:'row'}}>
-                 <View style={{flex:1,backgroundColor:'#dee3e9',bordercolor:'#ppp',borderRadius:'8px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:10,marginRight:10,marginBottom:10}}>
+                 <View style={{flex:1,backgroundColor:'#fff',borderRadius:'8px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:10,marginRight:10,marginBottom:10,borderColor:'#dcdcdc',borderWidth:2}}>
                  <TouchableOpacity   title="click   me   " borderRadius="80px" onPress={this._pickImage}>
                  <Image source={require('./assets/plus.png')} style={styles.Plus} />
                  </TouchableOpacity>
-        {image && <Image source={{ uri: image }} style={styles.Plus2} />}
+                 {image && <Image source={{ uri: image }} style={styles.Plus2} />}
     </View>  
-    <View style={{flex:1,backgroundColor:'#dee3e9',borderRadius:'8px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:30,marginRight:10,marginBottom:10}}>
+    <View style={{flex:1,backgroundColor:'#fff',borderRadius:'8px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:30,marginRight:10,marginBottom:10,borderColor:'#dcdcdc',borderWidth:2}}>
     <TouchableOpacity   title="click   me   " borderRadius="80px" onPress={this._pickImage2}>
                  <Image source={require('./assets/plus.png')} style={styles.Plus} />
                  </TouchableOpacity>
         {image && <Image source={{ uri: image2 }} style={styles.Plus2} />}
       </View>
-      <View style={{flex:1,backgroundColor:'#dee3e9',borderRadius:'8px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:30,marginRight:10,marginBottom:10}}>
+      <View style={{flex:1,backgroundColor:'#fff',borderRadius:'8px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:30,marginRight:10,marginBottom:10,borderColor:'#dcdcdc',borderWidth:2}}>
       <TouchableOpacity   title="click   me   " borderRadius="80px" onPress={this._pickImage3}>
                  <Image source={require('./assets/plus.png')} style={styles.Plus} />
                  </TouchableOpacity>
         {image && <Image source={{ uri: image3 }} style={styles.Plus2} />}
       </View>
-      <View style={{flex:1,backgroundColor:'#dee3e9',borderRadius:'8px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:30,marginRight:10,marginBottom:10}}>
+      <View style={{flex:1,backgroundColor:'#fff',borderRadius:'8px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:30,marginRight:10,marginBottom:10,borderColor:'#dcdcdc',borderWidth:2}}>
       <TouchableOpacity   title="click   me   " borderRadius="80px" onPress={this._pickImage4}>
                  <Image source={require('./assets/plus.png')} style={styles.Plus} />
                  </TouchableOpacity>
@@ -706,26 +682,26 @@ style={{ paddingTop: 8 }}
       </View>
       </View>
       <View style={{flexDirection:'row'}}>
-                 <View style={{flex:1,backgroundColor:'#dee3e9',borderRadius:'8px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:10,marginRight:10,marginBottom:10}}>
+                 <View style={{flex:1,backgroundColor:'#fff',borderRadius:'8px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:10,marginRight:10,marginBottom:10,borderColor:'#dcdcdc',borderWidth:2}}>
 
                  <TouchableOpacity   title="click   me   " borderRadius="80px" onPress={this._pickImage5}>
                  <Image source={require('./assets/plus.png')} style={styles.Plus} />
                  </TouchableOpacity>
         {image && <Image source={{ uri: image5 }} style={styles.Plus2} />}
     </View>  
-    <View style={{flex:1,backgroundColor:'#dee3e9',borderRadius:'8px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:30,marginRight:10,marginBottom:10}}>
+    <View style={{flex:1,backgroundColor:'#fff',borderRadius:'8px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:30,marginRight:10,marginBottom:10,borderColor:'#dcdcdc',borderWidth:2}}>
     <TouchableOpacity   title="click   me   " borderRadius="80px" onPress={this._pickImage6}>
                  <Image source={require('./assets/plus.png')} style={styles.Plus} />
                  </TouchableOpacity>
         {image && <Image source={{ uri: image6 }} style={styles.Plus2} />}
       </View>
-      <View style={{flex:1,backgroundColor:'#dee3e9',borderRadius:'8px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:30,marginRight:10,marginBottom:10}}>
+      <View style={{flex:1,backgroundColor:'#fff',borderRadius:'8px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:30,marginRight:10,marginBottom:10,borderColor:'#dcdcdc',borderWidth:2}}>
       <TouchableOpacity   title="click   me   " borderRadius="80px" onPress={this._pickImage7}>
                  <Image source={require('./assets/plus.png')} style={styles.Plus} />
                  </TouchableOpacity>
         {image && <Image source={{ uri: image7 }} style={styles.Plus2} />}
       </View>
-      <View style={{flex:1,backgroundColor:'#dee3e9',borderRadius:'8px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:30,marginRight:10,marginBottom:10}}>
+      <View style={{flex:1,backgroundColor:'#fff',borderRadius:'8px',Height:'50%',Width:'50%',marginTop:'1%',marginLeft:30,marginRight:10,marginBottom:10,borderColor:'#dcdcdc',borderWidth:2}}>
       <TouchableOpacity   title="click   me   " borderRadius="80px" onPress={this._pickImage8}>
                  <Image source={require('./assets/plus.png')} style={styles.Plus} />
                  </TouchableOpacity>
@@ -734,14 +710,11 @@ style={{ paddingTop: 8 }}
       </View>
       <Text style={{fontSize:12,color:'#546b8a',fontStyle:'bold'}}> If you have problems With flash please use simpler form </Text>
       <View style={{flexDirection:'row'}}>
-      <Image source={require('./assets/mar.png')} style={styles.Sq} /> 
+      <CheckBox></CheckBox>
       <Text style={{fontSize:15,color:'#8d1b3c',fontStyle:'bold',marginTop:'4%'}}>Agree to the terms and conditions </Text>
        </View>
-       <Button
-  title="  Save  "
-  color="#8d1b3c"
-  accessibilityLabel="Learn more about this purple button"
-/>
+      
+<AlertBox></AlertBox>
 <br></br>
       </View>
       <Footer />
@@ -924,9 +897,10 @@ const styles = StyleSheet.create({
     borderColor:'#546b8a',
     borderWidth: '4px',
     marginTop:'2%',
+    marginBottom:'2%',
     borderStyle:"bold",
     fontStyle:"italic",
-    width:600,
+    width:515,
     height:250,
    
 
@@ -937,8 +911,18 @@ ImageStyle: {
   margin: 5,
   height: 15,
   width: 15,
-  marginTop:20,
-  marginLeft:20,
+  marginTop:19,
+  marginLeft:30,
+  resizeMode : 'stretch',
+  alignItems: 'center'
+},
+ImageStyle3: {
+  padding: 10,
+  margin: 5,
+  height: 15,
+  width: 15,
+  marginTop:39,
+  marginLeft:30,
   resizeMode : 'stretch',
   alignItems: 'center'
 },
@@ -946,7 +930,7 @@ Plus: {
   margin: 5,
   height: 25,
   width: 45,
-  marginTop:10,
+  marginTop:50,
   marginLeft:35,
   marginRight:30,
   marginBottom:30,
@@ -954,10 +938,10 @@ Plus: {
 },
 Plus2: {
   margin: 5,
-  height: 25,
-  width: 45,
+  height: 10,
+  width: 25,
   marginTop:20,
-  marginLeft:35,
+  marginLeft:47,
   marginRight:30,
   marginBottom:10,
   resizeMode : 'stretch',
@@ -983,17 +967,35 @@ ImageStyle2: {
   alignItems: 'center'
 },
 
+name5inputs: {
+  margin: 15,
+  height: 40,
+  borderColor: '#fff',
+  borderWidth: 1,
+  marginLeft:20,
+  width:360,
+  backgroundColor:'#fff',
+  paddingLeft:'10%',
+  borderRadius:18,
+  fontFamily:'arial',
+fontSize:15,
+marginTop:7
 
+
+},
 name4inputs: {
-  margin: 10,
+  margin: 15,
   height: 80,
   borderColor: '#fff',
   borderWidth: 1,
-  marginLeft:200,
-  width:300,
+  marginLeft:20,
+  width:360,
   backgroundColor:'#fff',
-  paddingLeft:10,
+  paddingLeft:'10%',
   borderRadius:18,
+  fontFamily:'arial',
+fontSize:15,
+marginTop:7
 
 
 },
@@ -1002,12 +1004,15 @@ margin: 15,
 height: 30,
 borderColor: '#fff',
 borderWidth: 1,
-marginLeft:180,
-width:360,
+marginLeft:20,
+width:370,
 outline:'#fff',
 backgroundColor:'#fff',
-paddingLeft:10,
+paddingLeft:'10%',
 borderRadius:18,
+fontFamily:'arial',
+fontSize:15,
+marginTop:7
 
 
 },
@@ -1016,8 +1021,8 @@ margin: 15,
 height: 30,
 borderColor: '#fff',
 borderWidth: 1,
-marginLeft:170,
-width:240,
+marginLeft:40,
+width:360,
 backgroundColor:'#fff',
 paddingLeft:10,
 borderRadius:18,
@@ -1070,10 +1075,11 @@ buttonContainer: {
 MainContainer8: {
 
 margin: 15,
-height: 35,
+marginTop:.001,
+height: 40,
 borderColor: '#fff',
 borderWidth: 2,
-marginLeft:180,
+marginLeft:20,
 width:355,
 backgroundColor:'#fff',
 paddingLeft:2,
@@ -1088,8 +1094,8 @@ margin: 15,
 height: 70,
 borderColor: '#fff',
 borderWidth: 1,
-marginLeft:170,
-width:320,
+marginLeft:20,
+width:355,
 backgroundColor:'#fff',
 paddingLeft:10,
 borderRadius:18,
@@ -1098,26 +1104,40 @@ borderRadius:18,
 MainContainer2: {
 flex:1,
 margin: 15,
-height: 130,
+height: 72,
 borderColor: '#fff',
 borderWidth: 1,
-marginLeft:170,
-width:320,
+marginLeft:20,
+width:442,
 backgroundColor:'#fff',
 paddingLeft:10,
 borderRadius:18,
 
 
 },
+MainContainer12: {
+  flex:1,
+  margin: 15,
+  height: 70,
+  borderColor: '#fff',
+  borderWidth: 1,
+  marginLeft:20,
+  width:355,
+  backgroundColor:'#fff',
+  paddingLeft:10,
+  borderRadius:18,
+  
+  
+  },
 MainContainer3: {
 flex:1,
 
 margin: 15,
-height: 170,
+height: 70,
 borderColor: '#fff',
 borderWidth: 1,
-marginLeft:170,
-width:320,
+marginLeft:20,
+width:365,
 backgroundColor:'#fff',
 paddingLeft:10,
 borderRadius:18,

@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput,Platform ,Picker ,Button,   ScrollView,TouchableWithoutFeedback} from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput,Platform ,Picker ,Button,   ScrollView,TouchableWithoutFeedback,} from 'react-native';
 import { RadioGroup } from 'react-native-btr';
 import * as ImagePicker from 'expo-image-picker';
 import Constants from 'expo-constants';
@@ -10,55 +10,103 @@ import { Ionicons } from '@expo/vector-icons';
 import RNPickerSelect, { defaultStyles } from 'react-native-picker-select';
 import Header from'./Header.js';
 import Footer from'./Footer.js';
-import Example1 from './Example1.js';
-import AlertBox from './AlertBox';
+import Example from './Example.js';
+import AlertBox from './AlertBox.js';
 import CheckBox from './CheckBox'
 // import RNPickerSelect, { defaultStyles } from './debug';
 
-const make = [
+const type = [
   {
-    label: 'Abarth',
-    value: 'Abarth',
+    label: 'Crane & Lifting',
+    value: 'Crane & Lifting',
   },
   {
-    label: 'Acura',
-    value: 'Acura',
+    label: 'Forklift',
+    value: 'Forklift',
   },
   {
-    label: 'Alfa Romeo',
-    value: 'Alfa Romeo',
+    label: 'Crusher',
+    value: 'Crusher',
   },
   {
-    label: 'Aston Martin',
-    value: 'Aston MartinAlfa Romeo',
+    label: 'Tipper',
+    value: 'Tipper',
+  },
+  {
+    label: 'Escavator',
+    value: 'Escavator',
+  },
+  {
+    label: 'Concrete Equipment',
+    value: 'Concrete Equipment',
+  },
+  {
+    label: 'Tractor',
+    value: 'Tractor',
+  },
+  {
+    label: 'Caravan',
+    value: 'Caravan',
+  },
+  {
+    label: 'Generator',
+    value: 'Generator',
+  },
+  {
+    label: 'Dozer & Grader',
+    value: 'Dozer & Grader',
+  },
+  {
+    label: 'Skidsteer Loader',
+    value: 'Skidsteer Loader',
+  },
+  {
+    label: 'Roller',
+    value: 'Roller',
+  },
+  {
+    label: 'Other',
+    value: 'Other',
   },
 ],
- model = [
+ make = [
   {
-    label: '124',
-    value: '124',
+    label: 'Komatsu',
+    value: 'Komatsu',
   },
   {
-    label: '595',
-    value: '595',
+    label: 'JCB',
+    value: 'JCB',
   },
   {
-    label: '695',
-    value: '695',
+    label: 'Massey Ferguson',
+    value: 'Massey Ferguson',
+  },
+  {
+    label: 'Heli',
+    value: 'Heli',
+  },
+  {
+    label: 'Doosan',
+    value: 'Doosan',
+  },
+  {
+    label: 'CAT',
+    value: 'CAT',
   },
 ],
- year = [
+condition = [
   {
-    label: '2000',
-    value: '2000',
+    label: 'Brand new ',
+    value: 'Brand new ',
   },
   {
-    label: 'TLX',
-    value: 'TLX',
+    label: 'Good Condition',
+    value: 'Good Condition',
   },
   {
-    label: '9',
-    value: '9',
+    label: 'Need Maintenance',
+    value: 'Need Maintenance',
   },
 ],
  city = [
@@ -107,7 +155,7 @@ const make = [
 
 
 
-export default class postAddSUV extends Component {
+export default class PostHeavyEquipment extends Component {
  
   constructor(props) {
     super(props);
@@ -284,6 +332,7 @@ export default class postAddSUV extends Component {
        
         
       ],
+     
       PickerValueHolder:[
         {
   
@@ -419,142 +468,144 @@ export default class postAddSUV extends Component {
 
   <Header navigation={this.props.navigation} />
     <View style={{alignItems:'center'}}>
+    <View style={{flexDirection:'row',flex:1,borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
     
-    <Example1 />
+      <Image source={require('./assets/exclamation.png')} style={styles.ImageStyle} />
+      <Text style={{marginTop:20,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>Type        : </Text>     
+      <View style={styles. MainContainer8}>     
+      <ScrollView
+          style={styles.scrollContainer}
+          contentContainerStyle={styles.scrollContentContainer}>
+         
+
+          <View paddingVertical={5} />
+
+         
+          {/* and iOS onUpArrow/onDownArrow toggle example */}
+          <RNPickerSelect
+            placeholder={placeholder}
+            items={type}
+            onValueChange={value => {
+              this.setState({
+                favSport0: value,
+              });
+            }}
+            style={{
+              inputAndroid: {
+                backgroundColor: 'transparent',
+                borderColor:'#fff',
+                fontFamily:'arial',
+                fontSize:15,
+                marginTop:7
+              },
+              iconContainer: {
+                top: 5,
+                right: 15,
+              },
+            }}
+            value={this.state.favSport1}
+            useNativeAndroidPickerStyle={true}
+            textInputProps={{ underlineColorAndroid: 'cyan' }}
+            // Icon={() => {
+            //   return <Chevron size={1.5} color="gray" />;
+            // }}
+          />
+        </ScrollView>
+        </View>
+          
+           </View>
+    <View style={{flexDirection:'row',flex:1,borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
+    
+      <Image source={require('./assets/exclamation.png')} style={styles.ImageStyle} />
+      <Text style={{marginTop:20,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>Make        : </Text>     
+      <View style={styles. MainContainer8}>     
+      <ScrollView
+          style={styles.scrollContainer}
+          contentContainerStyle={styles.scrollContentContainer}>
+         
+
+          <View paddingVertical={5} />
+
+         
+          {/* and iOS onUpArrow/onDownArrow toggle example */}
+          <RNPickerSelect
+            placeholder={placeholder}
+            items={make}
+            onValueChange={value => {
+              this.setState({
+                favSport0: value,
+              });
+            }}
+            style={{
+              inputAndroid: {
+                backgroundColor: 'transparent',
+                borderColor:'#fff',
+                fontFamily:'arial',
+                fontSize:15,
+                marginTop:7
+              },
+              iconContainer: {
+                top: 5,
+                right: 15,
+              },
+            }}
+            value={this.state.favSport1}
+            useNativeAndroidPickerStyle={true}
+            textInputProps={{ underlineColorAndroid: 'cyan' }}
+            // Icon={() => {
+            //   return <Chevron size={1.5} color="gray" />;
+            // }}
+          />
+        </ScrollView>
+        </View>
+          
+           </View>
            <View style={{flexDirection:'row',flex:1,borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
     
-             
-              <Text style={{marginTop:20,color:'#000',fontFamily:'arial' ,fontSize:16 , color:'#546b8a',}}>            Trim           : </Text>     
-              <TextInput style = {styles. name3inputs}
-               underlineColorAndroid = "transparent"
-             placeholder="Enter Trim Level"
-             backgroundColor= 'transparent'
-                 placeholderTextColor = "#000"
-                 autoCapitalize = "none"
-               />
+    <Image source={require('./assets/exclamation.png')} style={styles.ImageStyle} />
+    <Text style={{marginTop:20,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>Condition    : </Text>     
+    <View style={styles. MainContainer8}>     
+    <ScrollView
+        style={styles.scrollContainer}
+        contentContainerStyle={styles.scrollContentContainer}>
+       
 
-             </View>
-             <View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
- 
-    <Text style={{marginTop:20,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>             Year         : </Text>  
-    <TextInput style = {styles. name3inputs}
-               underlineColorAndroid = "transparent"
-               placeholder="Enter The Year"
-               backgroundColor= 'transparent'
-                   placeholderTextColor = "#000"
-                 autoCapitalize = "none"
-               />
- 
+        <View paddingVertical={5} />
 
-   </View>
-
-                
-                 <View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
-    
-          
-                
-              
-                    <Text style={{marginTop:20,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>           Mileage         :</Text>     
-              <TextInput style = {styles. name3inputs}
-               underlineColorAndroid = "transparent"
-   
-               placeholder="    KM"
-               backgroundColor= 'transparent'
-               placeholderTextColor = "#000"
-                 autoCapitalize = "none"
-               />
-
-       </View>
-       <View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
-    
-                
-                 <Text style={{marginTop:20,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>        Engine Size      :</Text>     
-                
-              <TextInput style = {styles. name3inputs}
-               underlineColorAndroid = "transparent"
-   
-               placeholder="      L"
-               backgroundColor= 'transparent'
-               placeholderTextColor = "#000"
-                 autoCapitalize = "none"
-               />
-       </View>
-       <View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'18px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
-    
-                 <Text style={{marginTop:40,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>          Drive Terrain   : </Text>     
-                
-                
-      <View style={styles.MainContainer}>
- 
- <RadioGroup
-   color='#546b8a'
-   labelStyle={{ fontSize: 14, }}
-   radioButtons={this.state.radioButtons}
-   onPress={radioButtons=> this.setState({ radioButtons })}
-   style={{ paddingTop: 8 ,flexDirection:'row'}}
- />
-
-</View>
-
-       </View>
-       <View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'18px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
-    
-  
-   <Text style={{marginTop:40,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>        Transmission     :</Text>     
-  
-  
-<View style={styles.MainContainer12}>
-
-<RadioGroup
-color='#546b8a'
-labelStyle={{ fontSize: 14, }}
-radioButtons={this.state.radioButtons2}
-onPress={radioButtons2=> this.setState({ radioButtons2 })}
-style={{ paddingTop: 8 ,flexDirection:'row'}}
-/>
-
-</View>
-
-</View>
-<View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'18px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
-    
- 
-   <Text style={{marginTop:40,color:'#546b8a',marginLeft:20,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>       Fuel Type     : </Text>     
-  
-  
-<View style={styles.MainContainer3}>
-
-<RadioGroup
-color='#546b8a'
-labelStyle={{ fontSize: 14, }}
-radioButtons={this.state.radioButtons3}
-onPress={radioButtons3=> this.setState({ radioButtons3})}
-style={{ paddingTop: 8 ,flexDirection:'row'}}
-/>
-
-</View>
-
-</View>
-
-
-<View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'18px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
-
-   <Text style={{marginTop:45,color:'#546b8a',fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>    Condition:</Text>     
-  
-  
-<View style={styles.MainContainer2}>
-
-<RadioGroup
-color='#546b8a'
-labelStyle={{ fontSize: 14, }}
-radioButtons={this.state.radioButtons4}
-onPress={radioButtons4=> this.setState({ radioButtons4})}
-style={{ paddingTop: 8,flexDirection:'row' }}
-/>
-
-</View>
-
-</View>
+       
+        {/* and iOS onUpArrow/onDownArrow toggle example */}
+        <RNPickerSelect
+          placeholder={placeholder}
+          items={condition}
+          onValueChange={value => {
+            this.setState({
+              favSport0: value,
+            });
+          }}
+          style={{
+            inputAndroid: {
+              backgroundColor: 'transparent',
+              borderColor:'#fff',
+              fontFamily:'arial',
+              fontSize:15,
+              marginTop:7
+            },
+            iconContainer: {
+              top: 5,
+              right: 15,
+            },
+          }}
+          value={this.state.favSport1}
+          useNativeAndroidPickerStyle={true}
+          textInputProps={{ underlineColorAndroid: 'cyan' }}
+          // Icon={() => {
+          //   return <Chevron size={1.5} color="gray" />;
+          // }}
+        />
+      </ScrollView>
+      </View>
+        
+         </View>
 <View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
     
     <Image source={require('./assets/exclamation.png')} style={styles.ImageStyle} />
@@ -626,9 +677,9 @@ contentContainerStyle={styles.scrollContentContainer}>
   value={this.state.favSport1}
   useNativeAndroidPickerStyle={true}
   textInputProps={{ underlineColorAndroid: 'cyan' }}
-//   Icon={() => {
-//     return <Chevron size={1.5} color="gray" />;
-//   }}
+  // Icon={() => {
+  //   return <Chevron size={1.5} color="gray" />;
+  // }}
 />
 </ScrollView>
 </View>
@@ -657,7 +708,6 @@ contentContainerStyle={styles.scrollContentContainer}>
        backgroundColor= 'transparent'
        placeholderTextColor = "#000"
          autoCapitalize = "none"
-         multiline={true}
         />
 
    </View>
@@ -723,9 +773,10 @@ contentContainerStyle={styles.scrollContentContainer}>
       </View>
       <Text style={{fontSize:12,color:'#546b8a',fontStyle:'bold'}}> If you have problems With flash please use simpler form </Text>
       <View style={{flexDirection:'row'}}>
-     <CheckBox />
-      <Text style={{fontSize:15,color:'#8d1b3c',fontStyle:'bold',marginTop:'4%'}}>Agree to the terms and conditions </Text>
+      <CheckBox />
+  <Text style={{fontSize:15,color:'#8d1b3c',fontStyle:'bold',marginTop:'4%'}}>Agree to the terms and conditions </Text>
        </View>
+      
       
 <AlertBox></AlertBox>
 <br></br>

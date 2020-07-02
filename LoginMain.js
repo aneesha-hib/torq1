@@ -39,7 +39,7 @@ export default function LoginMain({navigation}) {
                        <Image style={styles.imageIcon} source={require('./assets/Van.png')}/>
                        <Text style={styles.vehicletext}>Van</Text>
                        </TouchableOpacity>
-                       <TouchableOpacity style={styles.vehiclecontainerItem}  onPress={() => navigation.navigate( 'postAdd' )}>
+                       <TouchableOpacity style={styles.vehiclecontainerItem}  onPress={() => navigation.navigate( 'PostHeavyEquipment' )}>
                        <Image style={styles.imageIcon} source={require('./assets/Heavy-Equipment.png')}/>
                        <Text style={styles.vehicletext}>Heavy Equipment</Text>
 
@@ -52,19 +52,19 @@ export default function LoginMain({navigation}) {
 
 
               <View style={styles.vehiclecontainer}>
-              <TouchableOpacity style={styles.vehiclecontainerItem}  onPress={() => navigation.navigate( 'postAdd' )}>
+              <TouchableOpacity style={styles.vehiclecontainerItem}  onPress={() => navigation.navigate( 'PostBike' )}>
                 <Image style={styles.imageIcon} source={require('./assets/Bike.png')}  />
                 <Text style={styles.vehicletext}>Bike</Text>
 
 
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.vehiclecontainerItem}  onPress={() => navigation.navigate( 'postAdd' )}>
+                <TouchableOpacity style={styles.vehiclecontainerItem}  onPress={() => navigation.navigate( 'PostBicycle' )}>
                 <Image style={styles.imageIcon} source={require('./assets/Bicycle.png')}/>
                 <Text style={styles.vehicletext}>Bicycle</Text>
 
 
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.vehiclecontainerItem}  onPress={() => navigation.navigate( 'postAdd' )}>
+                <TouchableOpacity style={styles.vehiclecontainerItem}  onPress={() => navigation.navigate( 'PostClassic' )}>
                 <Image style={styles.imageIcon} source={require('./assets/Classic.png')}/>
                 <Text style={styles.vehicletext}>Classic</Text>
 
@@ -75,12 +75,12 @@ export default function LoginMain({navigation}) {
 
 
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.vehiclecontainerItem}  onPress={() => navigation.navigate( 'postAdd' )}>
+                <TouchableOpacity style={styles.vehiclecontainerItem}  onPress={() => navigation.navigate( 'PostBoat' )}>
                 <Image style={styles.imageIcon} source={require('./assets/Boat.png')}/>
                 <Text style={styles.vehicletext}>Boat</Text>
 
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.vehiclecontainerItem}  onPress={() => navigation.navigate( 'postAdd' )}>
+                <TouchableOpacity style={styles.vehiclecontainerItem}  onPress={() => navigation.navigate( 'PostMore' )}>
                 <Image style={styles.imageIcon} source={require('./assets/More.png')}/>
                 <Text style={styles.vehicletext}>More</Text>
 

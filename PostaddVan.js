@@ -10,6 +10,7 @@ import { Ionicons } from '@expo/vector-icons';
 import RNPickerSelect, { defaultStyles } from 'react-native-picker-select';
 import Header from'./Header.js';
 import Footer from'./Footer.js';
+import Example1 from './Example1'
 // import RNPickerSelect, { defaultStyles } from './debug';
 
 const make = [
@@ -427,90 +428,8 @@ export default class PostaddVan extends Component {
 
   <Header navigation={this.props.navigation} />
     <View style={{alignItems:'center'}}>
+    <Example1/>
     
-    <View style={{flexDirection:'row',flex:1,backgroundColor:'#dee3e9',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%'}}>
-    
-      <Image source={require('./assets/exclamation.png')} style={styles.ImageStyle} />
-      <Text style={{marginTop:20,color:'#546b8a'}}>  Make  : </Text>     
-      <View style={styles. MainContainer8}>     
-      <ScrollView
-          style={styles.scrollContainer}
-          contentContainerStyle={styles.scrollContentContainer}>
-         
-
-          <View paddingVertical={5} />
-
-         
-          {/* and iOS onUpArrow/onDownArrow toggle example */}
-          <RNPickerSelect
-            placeholder={placeholder}
-            items={make}
-            onValueChange={value => {
-              this.setState({
-                favSport0: value,
-              });
-            }}
-            style={{
-              inputAndroid: {
-                backgroundColor: 'transparent',
-              },
-              iconContainer: {
-                top: 5,
-                right: 15,
-              },
-            }}
-            value={this.state.favSport1}
-            useNativeAndroidPickerStyle={false}
-            textInputProps={{ underlineColorAndroid: 'cyan' }}
-            Icon={() => {
-              return <Chevron size={1.5} color="gray" />;
-            }}
-          />
-        </ScrollView>
-        </View>
-          
-           </View>
-           <View style={{flexDirection:'row',flex:1,backgroundColor:'#dee3e9',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'1%'}}>
-    
-              <Image source={require('./assets/exclamation.png')} style={styles.ImageStyle} />
-              <Text style={{marginTop:20,color:'#546b8a'}}>  Model:</Text> 
-                <View style={styles. MainContainer8}>     
-                <ScrollView
-          style={styles.scrollContainer}
-          contentContainerStyle={styles.scrollContentContainer}>
-         
-
-          <View paddingVertical={5} />
-
-         
-          {/* and iOS onUpArrow/onDownArrow toggle example */}
-          <RNPickerSelect
-            placeholder={placeholder}
-            items={model}
-            onValueChange={value => {
-              this.setState({
-                favSport0: value,
-              });
-            }}
-            style={{
-              inputAndroid: {
-                backgroundColor: 'transparent',
-              },
-              iconContainer: {
-                top: 5,
-                right: 15,
-              },
-            }}
-            value={this.state.favSport1}
-            useNativeAndroidPickerStyle={false}
-            textInputProps={{ underlineColorAndroid: 'cyan' }}
-            Icon={() => {
-              return <Chevron size={1.5} color="gray" />;
-            }}
-          />
-        </ScrollView>
-        </View>
-           </View>
            <View style={{flexDirection:'row',flex:1,backgroundColor:'#dee3e9',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'1%'}}>
     
               <Image source={require('./assets/circle.png')} style={styles.ImageStyle} />
@@ -715,11 +634,11 @@ style={{ paddingTop: 8 }}
               },
             }}
             value={this.state.favSport1}
-            useNativeAndroidPickerStyle={false}
+            useNativeAndroidPickerStyle={true}
             textInputProps={{ underlineColorAndroid: 'cyan' }}
-            Icon={() => {
-              return <Chevron size={1.5} color="gray" />;
-            }}
+            // Icon={() => {
+            //   return <Chevron size={1.5} color="gray" />;
+            // }}
           />
         </ScrollView>
         </View>

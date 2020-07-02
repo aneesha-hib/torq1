@@ -611,6 +611,7 @@ contentContainerStyle={styles.scrollContentContainer}>
   style={{
     inputAndroid: {
       backgroundColor: 'transparent',
+      borderColor:'#fff',
       fontFamily:'arial',
       fontSize:15,
       marginTop:7,
@@ -622,11 +623,11 @@ contentContainerStyle={styles.scrollContentContainer}>
     },
   }}
   value={this.state.favSport1}
-  useNativeAndroidPickerStyle={false}
+   useNativeAndroidPickerStyle={true}
   textInputProps={{ underlineColorAndroid: 'cyan' }}
-  Icon={() => {
-    return <Chevron size={1.5} color="gray" />;
-  }}
+  // Icon={() => {
+  //   return <Chevron size={1.5} color="gray" />;
+  // }}
 />
 </ScrollView>
 </View>

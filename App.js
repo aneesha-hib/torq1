@@ -18,7 +18,7 @@ import Example from './Example.js'
 import * as React from 'react';
 import Signin from './Signin';
 import Signup from './Signup';
-import PostAddDetails from './postAddDetails';
+import PostAddDetails from './PostAddDetails';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';

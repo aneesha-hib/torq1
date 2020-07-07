@@ -53,7 +53,7 @@ export default class Signup extends Component
       alert(
       response
       );
-      this.setState({isLoading: false,first_name:'',last_name:'',phone:'',password:'',confirm_password:''});
+       this.setState({isLoading: false,first_name:'',last_name:'',phone:'',password:'',confirm_password:''});
       this.props.navigation.navigate('Signin');
      
    

@@ -141,7 +141,7 @@ export default class postAddSUV extends Component {
           color: '#000',
           disabled: false,
           flexDirection: 'row',
-          size: 11
+          size: 5
   
         },
   
@@ -152,7 +152,7 @@ export default class postAddSUV extends Component {
           color: '#000',
           disabled: false,
           flexDirection: 'row',
-          size: 11
+          size: 5
   
         },
   
@@ -163,7 +163,7 @@ export default class postAddSUV extends Component {
           color: '#000',
           disabled: false,
           flexDirection: 'row',
-          size: 11
+          size: 5
   
         }
   
@@ -176,7 +176,7 @@ export default class postAddSUV extends Component {
           color: '#000',
           disabled: false,
           flexDirection: 'row',
-          size: 11
+          size: 5
   
         },
   
@@ -187,7 +187,7 @@ export default class postAddSUV extends Component {
           color: '#000',
           disabled: false,
           flexDirection: 'row',
-          size: 11
+          size: 5
   
         },
   
@@ -198,7 +198,7 @@ export default class postAddSUV extends Component {
           color: '#000',
           disabled: false,
           flexDirection: 'row',
-          size: 11
+          size: 5
   
         }
   
@@ -211,7 +211,7 @@ export default class postAddSUV extends Component {
           color: '#000',
           disabled: false,
           flexDirection: 'row',
-          size: 11
+          size: 5
   
         },
   
@@ -222,7 +222,7 @@ export default class postAddSUV extends Component {
           color: '#000',
           disabled: false,
           flexDirection: 'row',
-          size: 11
+          size: 5
   
         },
   
@@ -233,7 +233,7 @@ export default class postAddSUV extends Component {
           color: '#000',
           disabled: false,
           flexDirection: 'row',
-          size: 11
+          size: 5
   
         },
         {
@@ -243,7 +243,7 @@ export default class postAddSUV extends Component {
           color: '#000',
           disabled: false,
           flexDirection: 'row',
-          size: 11
+          size: 5
   
         }
   
@@ -256,7 +256,7 @@ export default class postAddSUV extends Component {
           color: '#000',
           disabled: false,
           flexDirection: 'row',
-          size: 11
+          size: 5
   
         },
   
@@ -267,7 +267,7 @@ export default class postAddSUV extends Component {
           color: '#000',
           disabled: false,
           flexDirection: 'row',
-          size: 11
+          size: 5
   
         },
   
@@ -278,7 +278,7 @@ export default class postAddSUV extends Component {
           color: '#000',
           disabled: false,
           flexDirection: 'row',
-          size: 11
+          size: 5
   
         },
        
@@ -418,13 +418,14 @@ export default class postAddSUV extends Component {
    <View style={{backgroundColor:'#fff'}}>
 
   <Header navigation={this.props.navigation} />
-    <View style={{alignItems:'center'}}>
-    
+    <View style={{marginLeft:'10%',marginRight:'10%'}}>
     <Example1 />
-           <View style={{flexDirection:'row',flex:1,borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
+      <View style={{flexDirection:'row'}}>
+    
+           <View style={{flexDirection:'row',flex:1,borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2,marginRight:'5%'}}>
     
              
-              <Text style={{marginTop:20,color:'#000',fontFamily:'arial' ,fontSize:16 , color:'#546b8a',}}>            Trim           : </Text>     
+              <Text style={{marginTop:20,color:'#000',fontFamily:'arial' ,fontSize:16 , color:'#546b8a',}}>              Trim :            </Text>     
               <TextInput style = {styles. name3inputs}
                underlineColorAndroid = "transparent"
              placeholder="Enter Trim Level"
@@ -436,7 +437,7 @@ export default class postAddSUV extends Component {
              </View>
              <View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
  
-    <Text style={{marginTop:20,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>             Year         : </Text>  
+    <Text style={{marginTop:20,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>            Year :              </Text>  
     <TextInput style = {styles. name3inputs}
                underlineColorAndroid = "transparent"
                placeholder="Enter The Year"
@@ -448,13 +449,14 @@ export default class postAddSUV extends Component {
 
    </View>
 
-                
-                 <View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
+   </View>         
+   <View style={{flexDirection:'row'}}>
+                 <View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2,marginRight:'4%'}}>
     
           
                 
               
-                    <Text style={{marginTop:20,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>           Mileage         :</Text>     
+                    <Text style={{marginTop:20,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>             Mileage:             </Text>     
               <TextInput style = {styles. name3inputs}
                underlineColorAndroid = "transparent"
    
@@ -468,7 +470,7 @@ export default class postAddSUV extends Component {
        <View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
     
                 
-                 <Text style={{marginTop:20,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>        Engine Size      :</Text>     
+                 <Text style={{marginTop:20,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>          Engine Size:       </Text>     
                 
               <TextInput style = {styles. name3inputs}
                underlineColorAndroid = "transparent"
@@ -479,7 +481,9 @@ export default class postAddSUV extends Component {
                  autoCapitalize = "none"
                />
        </View>
-       <View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'18px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
+       </View>
+       <View style={{flexDirection:'row'}}>
+       <View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'18px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2,marginRight:'4%'}}>
     
                  <Text style={{marginTop:40,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>          Drive Terrain   : </Text>     
                 
@@ -516,7 +520,9 @@ style={{ paddingTop: 8 ,flexDirection:'row'}}
 </View>
 
 </View>
-<View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'18px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
+</View>
+<View style={{flexDirection:'row'}}>
+<View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'18px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2,marginRight:'4%'}}>
     
  
    <Text style={{marginTop:40,color:'#546b8a',marginLeft:20,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>       Fuel Type     : </Text>     
@@ -553,9 +559,10 @@ style={{ paddingTop: 8,flexDirection:'row' }}
 />
 
 </View>
-
 </View>
-<View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
+</View>
+<View style={{flexDirection:'row'}}>
+<View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2,marginRight:'4%'}}>
     
     <Image source={require('./assets/exclamation.png')} style={styles.ImageStyle} />
   
@@ -585,9 +592,10 @@ style={{ paddingTop: 8,flexDirection:'row' }}
  placeholderTextColor = "#000"
    autoCapitalize = "none"
  />
-
 </View>
-<View style={{flexDirection:'row',flex:1,borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>
+</View>
+<View style={{flexDirection:'row'}}>
+<View style={{flexDirection:'row',flex:1,borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2,marginRight:'4%'}}>
     
     <Image source={require('./assets/exclamation.png')} style={styles.ImageStyle} />
     <Text style={{marginTop:20,fontFamily:'arial' ,fontSize:16 , color:'#546b8a'}}>City            :</Text> 
@@ -615,7 +623,7 @@ contentContainerStyle={styles.scrollContentContainer}>
       borderColor:'#fff',
       fontFamily:'arial',
       fontSize:15,
-      marginTop:7,
+      marginTop:5,
       marginLeft:25
     },
     iconContainer: {
@@ -624,7 +632,7 @@ contentContainerStyle={styles.scrollContentContainer}>
     },
   }}
   value={this.state.favSport1}
-  useNativeAndroidPickerStyle={true}
+  useNativeAndroidPickerStyle={false}
   textInputProps={{ underlineColorAndroid: 'cyan' }}
 //   Icon={() => {
 //     return <Chevron size={1.5} color="gray" />;
@@ -645,12 +653,12 @@ contentContainerStyle={styles.scrollContentContainer}>
  placeholderTextColor = "#000"
    autoCapitalize = "none"
         />
-
+</View>
    </View>
    <View style={{flexDirection:'row',flex:1,backgroundColor:'#fff',borderRadius:'18px',Height:'50%',Width:'50%',marginBottom:'3%',marginTop:'3%',marginLeft:10,marginRight:10,borderColor:'#dcdcdc',borderWidth:2}}>
 
 
-    <Text style={{marginTop:20,color:'#546b8a',marginLeft:'5%'}}>              Description:</Text>     
+    <Text style={{marginTop:20,color:'#546b8a',marginLeft:'5%'}}> Description:        </Text>     
       <TextInput style = {styles. name4inputs}
        underlineColorAndroid = "transparent"
        placeholder="Enter The Description"
@@ -721,13 +729,15 @@ contentContainerStyle={styles.scrollContentContainer}>
         {image && <Image source={{ uri: image8 }} style={styles.Plus2} />}
       </View>
       </View>
+      <View style={{alignItems:'center'}}>
       <Text style={{fontSize:12,color:'#546b8a',fontStyle:'bold'}}> If you have problems With flash please use simpler form </Text>
       <View style={{flexDirection:'row'}}>
      <CheckBox />
       <Text style={{fontSize:15,color:'#8d1b3c',fontStyle:'bold',marginTop:'4%'}}>Agree to the terms and conditions </Text>
        </View>
-      
+       
 <AlertBox navigation={this.props.navigation}></AlertBox>
+</View>
 <br></br>
       </View>
       <Footer />
@@ -944,7 +954,7 @@ Plus: {
   height: 25,
   width: 45,
   marginTop:50,
-  marginLeft:35,
+  marginLeft:100,
   marginRight:30,
   marginBottom:30,
   resizeMode : 'stretch',
@@ -954,7 +964,7 @@ Plus2: {
   height: 10,
   width: 25,
   marginTop:20,
-  marginLeft:47,
+  marginLeft:100,
   marginRight:30,
   marginBottom:10,
   resizeMode : 'stretch',
@@ -1001,10 +1011,10 @@ name4inputs: {
   height: 80,
   borderColor: '#fff',
   borderWidth: 1,
-  marginLeft:20,
-  width:360,
+
+  width:'100%',
   backgroundColor:'#fff',
-  paddingLeft:'10%',
+  paddingLeft:'1%',
   borderRadius:18,
   fontFamily:'arial',
 fontSize:15,

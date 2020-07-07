@@ -122,11 +122,12 @@ class Example extends React.Component {
     };
     return (
 
+
 <View style={{Height:'50%',Width:'55%'}}>
 
 
-
-<View style={{flexDirection:'row',flex:1,borderRadius:'108px',Height:'50%',Width:'100%',marginTop:'3%',borderColor:'#dcdcdc',borderWidth:2}}>    
+<View style={{flexDirection:'row'}}>
+<View style={{flexDirection:'row',flex:1,borderRadius:'108px',Height:'50%',Width:'50%',marginTop:'10%',borderColor:'#dcdcdc',borderWidth:2,marginRight:'4%'}}>  
       <Image source={require('./assets/exclamation.png')} style={{
   padding: 10,
   margin: 5,
@@ -165,7 +166,8 @@ borderRadius:18,
           onChange={this.changeCountry}
            style={{borderColor:'#fff',fontFamily:'arial',
            fontSize:15,
-           marginTop:10}}
+           backgroundColor: 'transparent',
+           marginTop:5}}
           >
              <option>--Choose Make--</option>
              {this.state.countries.map((e, key) => {
@@ -227,6 +229,7 @@ borderRadius:18,
       
       
     
+     </View>
      </View>
         </View>
         </View>

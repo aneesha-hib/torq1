@@ -10,9 +10,49 @@ export default class Signin extends Component
   {
     super();
 
-    this.state = { hidePassword: true }
+    this.state = { 
+      hidePassword: true,
+      code:'+974',
+      phone:'',
+      password:''
+     }
   }
+  InsertUserRecordsToServer = () =>{
+    this.setState({isLoading: true});
+    fetch('http://localhost:8000/api/Login', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
 
+     
+      code : this.state.code,
+
+      phone: this.state.phone,
+
+      password:this.state.password,
+
+     
+    })
+
+    })
+    .then((response) => response.json())
+    .then(response => {
+      alert(
+       response
+      );
+
+      this.setState({isLoading: false,phone:'',password:''});
+   
+    })
+    .catch(error => {
+      this.setState({isLoading: false});
+      alert(error);
+    });
+
+}
   managePasswordVisibility = () =>
   {
     this.setState({ hidePassword: !this.state.hidePassword });
@@ -52,6 +92,8 @@ export default class Signin extends Component
                underlineColorAndroid = "transparent"
                placeholderTextColor = "#8d1b3e"
                autoCapitalize = "none"
+               value={this.state.code}
+               onChangeText={code=>this.setState({code})}
               /><View style={{backgroundColor:'#fff',position:'absolute',top:'13%',left:'18%'}}>
                  <Text style={{fontSize:width*.007,fontFamily:'Arial'}}>  Code  </Text>
 
@@ -61,6 +103,8 @@ export default class Signin extends Component
                underlineColorAndroid = "transparent"
                placeholderTextColor = "#8d1b3e"
                autoCapitalize = "none"
+               value={this.state.phone}
+               onChangeText={phone=>this.setState({phone})}
                /><View style={{backgroundColor:'#fff',position:'absolute',top:'9%',left:'45%'}}>
                <Text style={{fontSize:width*.007,fontFamily:'Arial'}}>  Your Mobile Number  </Text>
 
@@ -71,7 +115,10 @@ export default class Signin extends Component
           <View style = { styles.contai }>
         <View style = { styles.textBoxBtnHolder }>
           <br></br>
-          <TextInput underlineColorAndroid = "transparent" secureTextEntry = { this.state.hidePassword } style = { styles.textBox }/>
+          <TextInput underlineColorAndroid = "transparent" secureTextEntry = { this.state.hidePassword } style = { styles.textBox }
+          value={this.state.password}
+           onChangeText={password=>this.setState({password})}
+          />
           <View style={{backgroundColor:'#fff',position:'absolute',top:'8%',left:'15%'}}>
                <Text style={{fontSize:width*.007,marginLeft:width*.001,fontFamily:'Arial'}}>  Password  </Text>
 
@@ -94,9 +141,7 @@ export default class Signin extends Component
       <View style = {styles.buttonContainer}>
             <TouchableOpacity
                style = {styles.submitButton}
-               onPress = {
-                  () => this.login(this.state.email, this.state.password)
-               }>
+               onPress={this.InsertUserRecordsToServer.bind(this)}>
                <Text style = {styles.submitButtonText}> Login </Text>
                
             </TouchableOpacity>

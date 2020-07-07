@@ -18,7 +18,7 @@ import Example from './Example.js'
 import * as React from 'react';
 import Signin from './Signin';
 import Signup from './Signup';
-
+import PostAddDetails from './postAddDetails';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -45,6 +45,7 @@ export default function App() {
       <Stack.Screen name="Example" component={Example} />
       <Stack.Screen name="Signin" component={Signin} />
       <Stack.Screen name="Signup" component={Signup} />
+      <Stack.Screen name="PostAddDetails" component={PostAddDetails} />
 
     </Stack.Navigator>
   </NavigationContainer>

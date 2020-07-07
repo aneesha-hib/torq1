@@ -4,7 +4,8 @@ import { Button, View, Text } from 'react-native';
 class App extends Component{
 
   onButtonClickHandler = () => {
-    window.alert('Sucessfully Registered')
+    // window.alert('Sucessfully Registered')
+    this.props.navigation.navigate('PostAddDetails');
   };
 
   render(){ 

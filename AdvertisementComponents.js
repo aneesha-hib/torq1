@@ -269,7 +269,7 @@ const styles=StyleSheet.create(
   },
   featuredAdDetails2:
   {
-    fontSize:10,
+    fontSize:width*.008,
     color:'#354e76',
   
     marginRight:'2%'

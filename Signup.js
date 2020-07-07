@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, Platform,Sc
 import Header from './Header.js';
 import Footer from './Footer.js';
 import Advertisement from './Advertisement.js';
+import Signin from './Signin.js';
 
 export default class Signup extends Component
 {
@@ -10,8 +11,60 @@ export default class Signup extends Component
   {
     super();
 
-    this.state = { hidePassword: true }
+    this.state = { 
+      first_name:'',
+      last_name:'',
+      code:'+974',
+      phone:'',
+      password:'',
+      confirm_password:'',
+      hidePassword: true ,
+      isLoading: false,
+    }
   }
+
+
+  InsertUserRecordsToServer = () =>{
+    this.setState({isLoading: true});
+    fetch('http://localhost:8000/api/InsertUserDetails', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+
+      first_name : this.state.first_name,
+
+      last_name : this.state.last_name,
+
+      code : this.state.code,
+
+      phone: this.state.phone,
+
+      password:this.state.password,
+
+      confirm_password:this.state.confirm_password
+
+    })
+
+    }).then((response) => response.json())
+    .then(response => {
+      alert(
+      response
+      );
+      this.setState({isLoading: false,first_name:'',last_name:'',phone:'',password:'',confirm_password:''});
+      this.props.navigation.navigate('Signin');
+     
+   
+    })
+    .catch(error => {
+      this.setState({isLoading: false});
+      alert(error);
+    });
+
+}
+
 
   managePasswordVisibility = () =>
   {
@@ -52,6 +105,8 @@ export default class Signup extends Component
                underlineColorAndroid = "transparent"
                placeholderTextColor = "#8d1b3e"
                autoCapitalize = "none"
+               value={this.state.first_name}
+               onChangeText={ first_name => this.setState({ first_name  }) }
               /><View style={{backgroundColor:'#fff',position:'absolute',top:'13%',left:'20%'}}>
                  <Text style={{fontSize:width*.007,fontFamily:'Arial'}}>  First Name  </Text>
 
@@ -61,6 +116,8 @@ export default class Signup extends Component
                underlineColorAndroid = "transparent"
                placeholderTextColor = "#8d1b3e"
                autoCapitalize = "none"
+               value={this.state.last_name}
+               onChangeText={ last_name => this.setState({ last_name  }) }
                /><View style={{backgroundColor:'#fff',position:'absolute',top:'9%',left:'62%'}}>
                <Text style={{fontSize:width*.007,fontFamily:'Arial'}}>  Last Name  </Text>
 
@@ -72,6 +129,8 @@ export default class Signup extends Component
                underlineColorAndroid = "transparent"
                placeholderTextColor = "#8d1b3e"
                autoCapitalize = "none"
+               value={this.state
+              .code}
               /><View style={{backgroundColor:'#fff',position:'absolute',top:'13%',left:'20%'}}>
                  <Text style={{fontSize:width*.007,fontFamily:'Arial'}}>  Code  </Text>
 
@@ -81,6 +140,8 @@ export default class Signup extends Component
                underlineColorAndroid = "transparent"
                placeholderTextColor = "#8d1b3e"
                autoCapitalize = "none"
+               value={this.state.phone}
+               onChangeText={ phone => this.setState({ phone }) }
                /><View style={{backgroundColor:'#fff',position:'absolute',top:'9%',left:'45%'}}>
                <Text style={{fontSize:width*.007,fontFamily:'Arial'}}>  Your Mobile Number  </Text>
 
@@ -91,17 +152,21 @@ export default class Signup extends Component
           <View style = { styles.contai }>
         <View style = { styles.textBoxBtnHolder }>
           <br></br>
-          <TextInput underlineColorAndroid = "transparent" secureTextEntry = { this.state.hidePassword } style = { styles.textBox }/>
+          <TextInput underlineColorAndroid = "transparent" secureTextEntry = { this.state.hidePassword } style = { styles.textBox }
+           value={this.state.password}
+           onChangeText={ password => this.setState({ password }) }/>
           <View style={{backgroundColor:'#fff',position:'absolute',top:'8.5%',left:'15%'}}>
                <Text style={{fontSize:width*.007,marginLeft:width*.001,fontFamily:'Arial'}}>  Password  </Text>
 
             </View>
-            <TextInput underlineColorAndroid = "transparent" secureTextEntry = { this.state.hidePassword } style = { styles.textBox2}/>
+            <TextInput underlineColorAndroid = "transparent" secureTextEntry = { this.state.hidePassword } style = { styles.textBox2}
+             value={this.state.confirm_password}
+             onChangeText={ confirm_password => this.setState({ confirm_password }) }/>
           <View style={{backgroundColor:'#fff',position:'absolute',top:'8.5%',left:'60%'}}>
                <Text style={{fontSize:width*.007,marginLeft:width*.001,fontFamily:'Arial'}}>  Confirm Password  </Text>
 
             </View>
-          <TouchableOpacity activeOpacity = { 0.8 } style = { styles.visibilityBtn } onPress = { this.managePasswordVisibility }>
+          <TouchableOpacity activeOpacity = { 0.8 } style = { styles.visibilityBtn } onPress = {this.managePasswordVisibility }>
             <Image source = { ( this.state.hidePassword ) ? require('./assets/closedeye.png') : require('./assets/openeye.png') } style = { styles.btnImage } />
             
           </TouchableOpacity>
@@ -118,10 +183,9 @@ export default class Signup extends Component
       <View style = {styles.buttonContainer}>
             <TouchableOpacity
                style = {styles.submitButton}
-               onPress = {
-                  () => this.login(this.state.email, this.state.password)
-               }>
-               <Text style = {styles.submitButtonText}> Login </Text>
+               onPress={this.InsertUserRecordsToServer.bind(this)}
+               >
+               <Text style = {styles.submitButtonText}> Register </Text>
                
             </TouchableOpacity>
            

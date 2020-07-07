@@ -754,7 +754,7 @@ contentContainerStyle={styles.scrollContentContainer}>
        </View>
       
       
-<AlertBox></AlertBox>
+<AlertBox navigation={this.props.navigation}></AlertBox>
 <br></br>
       </View>
       <Footer />

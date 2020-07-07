@@ -758,7 +758,7 @@ contentContainerStyle={styles.scrollContentContainer}>
       <Text style={{fontSize:15,color:'#8d1b3c',fontStyle:'bold',marginTop:'4%'}}>Agree to the terms and conditions </Text>
        </View>
       
-<AlertBox></AlertBox>
+<AlertBox navigation={this.props.navigation}></AlertBox>
 <br></br>
       </View>
       <Footer />

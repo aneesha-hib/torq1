@@ -26,7 +26,7 @@ export default class Signup extends Component
 
   InsertUserRecordsToServer = () =>{
     this.setState({isLoading: true});
-    fetch('http://localhost:8000/api/InsertUserDetails', {
+    fetch('https://torqdevelopment.000webhostapp.com/api/SignUp', {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
